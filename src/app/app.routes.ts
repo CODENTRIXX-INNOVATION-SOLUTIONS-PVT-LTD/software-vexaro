@@ -18,7 +18,7 @@ import { AdminReports } from './pages/super-admin/admin-reports/admin-reports';
 import { UserManagement } from './pages/super-admin/user-management/user-management';
 import { AdminSetting } from './pages/super-admin/admin-setting/admin-setting';
 import { AdminPayment } from './pages/super-admin/admin-payment/admin-payment';
-import { MerchantProfile } from './pages/super-admin/merchant/merchant-profile/merchant-profile';
+
 // WAREHOUSE
 import { InboundShipments } from './pages/warehouse/inbound-shipments/inbound-shipments';
 import { OutboundShipments } from './pages/warehouse/outbound-shipments/outbound-shipments';
@@ -44,6 +44,9 @@ import { AddressBook } from './pages/merchant/address-book/address-book';
 import { MarchandeDashboardPage } from './pages/merchant/dashboard/dashboard';
 import { DistributorProfile } from './pages/super-admin/distributor/distributor-profile/distributor-profile';
 import { Reports } from './pages/merchant/reports/reports';
+import { MerchantProfile } from './pages/super-admin/merchant/merchant-profile/merchant-profile';
+import { MerchantTracking } from './pages/merchant/merchant-tracking/merchant-tracking';
+import { DistributorShipment } from './pages/distributor/distributor-shipment/distributor-shipment';
 
 
 
@@ -85,6 +88,7 @@ export const routes: Routes = [
       { path: 'bulk-upload', component: BulkUpload },
       { path: 'payments', component: Payments },
       { path: 'reports', component: Reports },
+      { path: 'tracking', component: MerchantTracking },
       { path: 'address-book', component: AddressBook },
       { path: 'support', component: Support },
       { path: 'merchants/profile/:id', component: MerchantProfile },
@@ -99,6 +103,7 @@ export const routes: Routes = [
       { path: 'deliveries', component: Deliveries },
       { path: 'assign-delivery', component: DAssignDelivery },
       { path: 'pickups', component: Pickups },
+      { path: 'shipments', component: DistributorShipment },
       { path: 'failed-deliveries', component: FailedDeliveries },
       { path: 'reports', component: Reports },
       { path: 'drivers', component: Drivers },

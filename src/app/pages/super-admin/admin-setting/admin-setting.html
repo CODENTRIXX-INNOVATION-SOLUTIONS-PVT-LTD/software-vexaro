@@ -73,36 +73,6 @@
 
     </div>
 
-    <!-- API Settings -->
-
-    <div class="card">
-
-        <h2>API Settings</h2>
-
-        <div class="form-grid">
-
-            <div class="form-group">
-                <label>API Key</label>
-                <input type="text"
-                    [(ngModel)]="settings.apiSettings.apiKey">
-            </div>
-
-            <div class="form-group">
-                <label>Webhook URL</label>
-                <input type="text"
-                    [(ngModel)]="settings.apiSettings.webhookUrl">
-            </div>
-
-            <div class="form-group full-width">
-                <label>Secret Key</label>
-                <input type="text"
-                    [(ngModel)]="settings.apiSettings.secretKey">
-            </div>
-
-        </div>
-
-    </div>
-
     <button class="save-btn" (click)="saveSettings()">
         Save Settings
     </button>
