@@ -64,35 +64,26 @@
                 Profile
             </button>
 
-        <button class="btn-outline" [class.active-tab]="activeTab === 'apiKeys'"
-    (click)="changeTab('apiKeys')">
-    <i class="fas fa-key"></i>
-    API Keys
-</button>
 
-<button class="btn-outline" [class.active-tab]="activeTab === 'documents'"
-    (click)="changeTab('documents')">
-    <i class="fas fa-file-alt"></i>
-    Documents
-</button>
+            <button class="btn-outline" [class.active-tab]="activeTab === 'documents'" (click)="changeTab('documents')">
+                <i class="fas fa-file-alt"></i>
+                Documents
+            </button>
 
-<button class="btn-outline" [class.active-tab]="activeTab === 'invoices'"
-    (click)="changeTab('invoices')">
-    <i class="fas fa-file-invoice"></i>
-    Invoices
-</button>
+            <button class="btn-outline" [class.active-tab]="activeTab === 'invoices'" (click)="changeTab('invoices')">
+                <i class="fas fa-file-invoice"></i>
+                Invoices
+            </button>
 
-<button class="btn-outline" [class.active-tab]="activeTab === 'payments'"
-    (click)="changeTab('payments')">
-    <i class="fas fa-money-bill-wave"></i>
-    Payments
-</button>
+            <button class="btn-outline" [class.active-tab]="activeTab === 'payments'" (click)="changeTab('payments')">
+                <i class="fas fa-money-bill-wave"></i>
+                Payments
+            </button>
 
-<button class="btn-outline" [class.active-tab]="activeTab === 'shipments'"
-    (click)="changeTab('shipments')">
-    <i class="fas fa-truck"></i>
-    Shipments
-</button>
+            <button class="btn-outline" [class.active-tab]="activeTab === 'shipments'" (click)="changeTab('shipments')">
+                <i class="fas fa-truck"></i>
+                Shipments
+            </button>
 
             <button class="btn-status" [class.active-btn]="merchant.status !== 'Active'"
                 [class.inactive-btn]="merchant.status === 'Active'" (click)="toggleStatus()">
@@ -272,18 +263,18 @@
 
     </div>
 
- <app-merchant-api-keys *ngIf="activeTab === 'apiKeys'">
-</app-merchant-api-keys>
+    <app-merchant-api-keys *ngIf="activeTab === 'apiKeys'">
+    </app-merchant-api-keys>
 
-<app-merchant-documents *ngIf="activeTab === 'documents'">
-</app-merchant-documents>
+    <app-merchant-documents *ngIf="activeTab === 'documents'">
+    </app-merchant-documents>
 
-<app-merchant-invoices *ngIf="activeTab === 'invoices'">
-</app-merchant-invoices>
+    <app-merchant-invoices *ngIf="activeTab === 'invoices'">
+    </app-merchant-invoices>
 
-<app-merchant-payments *ngIf="activeTab === 'payments'">
-</app-merchant-payments>
+    <app-merchant-payments *ngIf="activeTab === 'payments'">
+    </app-merchant-payments>
 
-<app-merchant-shipments *ngIf="activeTab === 'shipments'">
-</app-merchant-shipments>
+    <app-merchant-shipments *ngIf="activeTab === 'shipments'">
+    </app-merchant-shipments>
 </div>

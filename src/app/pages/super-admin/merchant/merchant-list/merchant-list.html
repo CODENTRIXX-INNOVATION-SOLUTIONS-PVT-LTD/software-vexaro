@@ -1,34 +1,22 @@
 <div class="page-container">
-
     <div class="page-header">
-
         <div>
-
             <h2>Merchants</h2>
-
             <div class="breadcrumb">
                 <a routerLink="/super-admin/dashboard">Dashboard</a>
                 <span>›</span>
                 <span class="active">Merchants</span>
             </div>
-
         </div>
-
     </div>
 
     <div class="table-card">
-
         <div class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input
-                type="text"
-                placeholder="Search merchant...">
+            <input type="text" placeholder="Search merchant...">
         </div>
-
         <table>
-
             <thead>
-
                 <tr>
                     <th>ID</th>
                     <th>Company Name</th>
@@ -57,9 +45,7 @@
 
                     <td>
 
-                        <span
-                            class="status"
-                            [class.active-status]="merchant.status === 'Active'"
+                        <span class="status" [class.active-status]="merchant.status === 'Active'"
                             [class.inactive-status]="merchant.status === 'Inactive'">
 
                             {{ merchant.status }}
@@ -72,9 +58,7 @@
 
                         <div class="action-menu">
 
-                            <button
-                                class="menu-btn"
-                                (click)="toggleMenu(merchant.id); $event.stopPropagation()">
+                            <button class="menu-btn" (click)="toggleMenu(merchant.id); $event.stopPropagation()">
 
                                 <i class="fa-solid fa-ellipsis"></i>
 
@@ -89,15 +73,7 @@
                                     <span>View Details</span>
                                 </button>
 
-                                <button>
-                                    <i class="fa-solid fa-pen"></i>
-                                    <span>Edit Merchant</span>
-                                </button>
-
-                                <button class="danger">
-                                    <i class="fa-solid fa-ban"></i>
-                                    <span>Disable Merchant</span>
-                                </button>
+                    
 
                             </div>
 
@@ -121,18 +97,5 @@
 
     </div>
 
-    <div class="info-box">
-
-        <i class="fa-solid fa-circle-info"></i>
-
-        <span>
-
-            Click on
-            <strong>Add Merchant</strong>
-            button to create a new merchant.
-
-        </span>
-
-    </div>
 
 </div>
