@@ -5,6 +5,8 @@ import { DistributorDashboard } from './dashboards/distributor-dashboard/distrib
 import { WarehouseDashboard } from './dashboards/warehouse-dashboard/warehouse-dashboard';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 // SUPER-ADMIN
 import { SuperAdminDashboardPage } from './pages/super-admin/dashboard/SuperAdminDashboardPage';
@@ -97,6 +99,14 @@ export const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'forgot-password',
+    component: ForgotPasswordComponent
+  },
+  {
+    path: 'reset-password',
+    component: ResetPasswordComponent
   },
   {
     path: 'super-admin', component: SuperAdminDashboard,
