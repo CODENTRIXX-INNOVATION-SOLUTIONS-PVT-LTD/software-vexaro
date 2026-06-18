@@ -60,10 +60,17 @@ import { NotificationsSettings } from './pages/distributor/settings/notification
 import { SecuritySettings } from './pages/distributor/settings/security/security';
 import { ApiSettings } from './pages/distributor/settings/api-settings/api-settings';
 import { CreateShipment } from './pages/merchant/create-shipment/create-shipment';
-import { DistrubuterDashboardPage } from './pages/distributor/dashboard/DistrubuterDashboardPage';
+// import { DistrubuterDashboardPage } from './pages/distributor/dashboard/DistrubuterDashboardPage';
 import { LiveTracking } from './pages/distributor/tracking/live-tracking/live-tracking';
 import { TrackingHistory } from './pages/distributor/tracking/tracking-history/tracking-history';
 import { AwbSearch } from './pages/distributor/tracking/awb-search/awb-search';
+// import { Deliveries } from './pages/distributor/deliveries/deliveries';
+// import { DAssignDelivery } from './pages/distributor/assign-delivery/assign-delivery';
+// import { Pickups } from './pages/distributor/pickups/pickups';
+// import { FailedDeliveries } from './pages/distributor/failed-deliveries/failed-deliveries';
+// import { Drivers } from './pages/distributor/drivers/drivers';
+import { DistrubuterDashboardPage } from './pages/distributor/dashboard/DistrubuterDashboardPage';
+import { DistributorWallet } from './pages/distributor/wallet/wallet';
 
 // MARCHAND
 import { BulkUpload } from './pages/merchant/bulk-upload/bulk-upload';
@@ -75,6 +82,11 @@ import { Reports } from './pages/merchant/reports/reports';
 import { MerchantProfile } from './pages/super-admin/merchant/merchant-profile/merchant-profile';
 import { MerchantTracking } from './pages/merchant/merchant-tracking/merchant-tracking';
 
+// import { DistributorShipment } from './pages/distributor/distributor-shipment/distributor-shipment';
+import { MerchantSupport } from './pages/merchant/merchant-support/merchant-support';
+import { MerchantShipments } from './pages/merchant/shipments/merchant-shipments';
+import { MerchantProfilePage } from './pages/merchant/merchant-profile-page/merchant-profile-page';
+import { MerchantWarehouse } from './pages/merchant/merchant-warehouse/merchant-warehouse';
 
 
 export const routes: Routes = [
@@ -110,15 +122,18 @@ export const routes: Routes = [
     component: MerchantDashboard,
     children: [
       { path: 'dashboard', component: MarchandeDashboardPage },
-      { path: 'shipments', component: Shipments },
       // { path: 'tracking', component: Tracking },
       { path: 'create-shipment', component: CreateShipment },
+      { path: 'shipments', component: MerchantShipments },
+      { path: 'tracking', component: Tracking },
       { path: 'bulk-upload', component: BulkUpload },
       { path: 'payments', component: Payments },
       { path: 'reports', component: Reports },
       { path: 'tracking', component: MerchantTracking },
       { path: 'address-book', component: AddressBook },
-      { path: 'support', component: Support },
+      { path: 'support', component: MerchantSupport },
+      { path: 'profile', component: MerchantProfilePage },
+      { path: 'warehouse', component: MerchantWarehouse },
       { path: 'merchants/profile/:id', component: MerchantProfile },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]
@@ -134,6 +149,8 @@ export const routes: Routes = [
       { path: 'merchants/create', component: CreateMerchant },
       { path: 'merchants/:id', component: DistributorMerchantProfile },
       // Note: merchants/:id/wallet and merchants/:id/shipments can use the MerchantProfile component with activeTab set
+      { path: 'tracking', component: Tracking },
+      { path: 'wallet', component: DistributorWallet },
 
       // Operations
       { path: 'operations/shipments', component: AllShipments },
@@ -144,12 +161,12 @@ export const routes: Routes = [
       { path: 'tracking/history', component: TrackingHistory },
       { path: 'tracking/search', component: AwbSearch },
       { path: 'tracking', redirectTo: 'tracking/live', pathMatch: 'full' },
-      
+
       // Merchant Finance
       { path: 'merchant-finance/wallets', component: AllMerchantWallets },
       { path: 'merchant-finance/topup', component: TopupMerchantWallet },
       { path: 'merchant-finance/transactions', component: Transactions }, // Reuse transactions for now
-      
+
       // My Finance
       { path: 'finance/cod-management', component: CodManagement },
       { path: 'finance/wallet', component: Wallet },
@@ -187,7 +204,7 @@ export const routes: Routes = [
       { path: 'settings/security', component: SecuritySettings },
       { path: 'settings/api-settings', component: ApiSettings },
       { path: 'settings', redirectTo: 'settings/profile', pathMatch: 'full' },
-      
+
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]
   },

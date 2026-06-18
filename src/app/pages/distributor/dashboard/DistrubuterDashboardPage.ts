@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardHeader } from '../../../components/dashboard-header/dashboard-header';
 import { DistributorDashboardBottom } from '../../../components/distributor-dashboard-bottom/distributor-dashboard-bottom';
+import { FinancialStore } from '../../../shared/financial-store';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, DashboardHeader, DistributorDashboardBottom],
+  imports: [DashboardHeader, DistributorDashboardBottom, CommonModule],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
@@ -16,11 +17,38 @@ export class DistrubuterDashboardPage {
     email: 'rohan@example.com',
     profileImage: 'assets/images/default-avatar.png'
   };
+
+  requestSent: boolean = false;
+
+  get status() {
+    const req = FinancialStore.onboardingRequests.find(r => r.email === 'ketan@gmail.com');
+    return req ? req.status : 'Active';
+  }
+
+  requestApproval() {
+    this.requestSent = true;
+    const req = FinancialStore.onboardingRequests.find(r => r.email === 'ketan@gmail.com');
+    if (req) {
+      alert('Approval request has been sent to the Super Admin!');
+    } else {
+      FinancialStore.onboardingRequests.unshift({
+        requestId: 'ONB' + Math.floor(1000 + Math.random() * 9000),
+        distributorName: 'Ketan Logistics Hub',
+        email: 'ketan@gmail.com',
+        phone: '9876543210',
+        region: 'North Zone',
+        date: '17 Jun 2026',
+        status: 'Pending'
+      });
+      alert('Approval request has been sent to the Super Admin!');
+    }
+  }
+
   cards = [
     {
-      title: 'Total Merchants',
-      value: '12',
-      icon: 'fas fa-users',
+      title: 'Assigned Deliveries',
+      value: '128',
+      icon: 'fas fa-box',
       iconColor: '#2563eb',
       bgColor: '#dbeafe'
     },
@@ -59,5 +87,5 @@ export class DistrubuterDashboardPage {
       iconColor: '#dc2626',
       bgColor: '#fee2e2'
     }
-  ];
+  ]
 }
