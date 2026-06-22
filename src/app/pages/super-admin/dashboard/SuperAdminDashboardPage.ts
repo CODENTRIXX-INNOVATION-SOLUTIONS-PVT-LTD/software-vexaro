@@ -17,77 +17,17 @@ export class SuperAdminDashboardPage {
 
   cards = [
     {
-      title: 'Total Shipments',
-      value: '12,678',
+      title: 'Total Shipments Managed',
+      value: '1,425,678',
       symbol: '+',
       percentage: '12.5',
       compairTo: 'vs last month',
       icon: 'fas fa-box',
-      iconColor: '#2563eb',
+      iconColor: 'rgb(11, 74, 111)',
       bgColor: '#dbeafe'
     },
     {
-      title: 'Delivered',
-      value: '10,426',
-      symbol: '+',
-      percentage: '10.3',
-      compairTo: 'vs last month',
-      icon: 'fas fa-check-circle',
-      iconColor: '#16a34a',
-      bgColor: '#dcfce7'
-    },
-    {
-      title: 'In Transit',
-      value: '1,890',
-      symbol: '+',
-      percentage: '8.2',
-      compairTo: 'vs last month',
-      icon: 'fas fa-truck',
-      iconColor: '#f59e0b',
-      bgColor: '#fef3c7'
-    },
-    {
-      title: 'Pending',
-      value: '362',
-      symbol: '-',
-      percentage: '4.5',
-      compairTo: 'vs last month',
-      icon: 'fas fa-clock',
-      iconColor: '#dc2626',
-      bgColor: '#fee2e2'
-    },
-    {
-      title: 'Total Revenue',
-      value: '₹45,67,890',
-      symbol: '+',
-      percentage: '15.6',
-      compairTo: 'vs last month',
-      icon: 'fas fa-indian-rupee-sign',
-      iconColor: '#7c3aed',
-      bgColor: '#ede9fe'
-    },
-    {
-      title: 'Failed Deliveries',
-      value: '128',
-      symbol: '-',
-      percentage: '2.8',
-      compairTo: 'vs last month',
-      icon: 'fas fa-times-circle',
-      iconColor: '#ef4444',
-      bgColor: '#fee2e2'
-    },
-    {
-      title: 'Active Merchants',
-      value: '245',
-      symbol: '+',
-      percentage: '7.4',
-      compairTo: 'vs last month',
-      icon: 'fas fa-store',
-      iconColor: '#0ea5e9',
-      bgColor: '#e0f2fe'
-    },
-    {
-      title: 'Active Distributors',
+      title: 'Active Platform Distributors',
       value: '84',
       symbol: '+',
       percentage: '5.6',
@@ -97,14 +37,24 @@ export class SuperAdminDashboardPage {
       bgColor: '#ccfbf1'
     },
     {
-      title: 'Active Warehouses',
-      value: '32',
+      title: 'Vexaro Core Cash Pool',
+      value: '₹4,56,78,900',
       symbol: '+',
-      percentage: '3.2',
+      percentage: '15.6',
       compairTo: 'vs last month',
-      icon: 'fas fa-warehouse',
-      iconColor: '#f97316',
-      bgColor: '#ffedd5'
+      icon: 'fas fa-indian-rupee-sign',
+      iconColor: '#7c3aed',
+      bgColor: '#ede9fe'
+    },
+    {
+      title: 'System Weight Disputes Pending',
+      value: '12',
+      symbol: '-',
+      percentage: '4.5',
+      compairTo: 'vs last month',
+      icon: 'fas fa-scale-unbalanced',
+      iconColor: '#dc2626',
+      bgColor: '#fee2e2'
     }
   ];
 

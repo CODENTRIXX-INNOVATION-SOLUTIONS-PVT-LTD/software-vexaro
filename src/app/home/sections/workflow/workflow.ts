@@ -20,6 +20,7 @@ export class Workflow implements AfterViewInit {
   translateX = signal(0);
   sectionHeight = signal('100vh');
   private maxShift = 0;
+  private measured = false;
 
   readonly steps: Step[] = [
     {
@@ -53,29 +54,44 @@ export class Workflow implements AfterViewInit {
   ];
 
   ngAfterViewInit(): void {
-    // give layout a tick to settle
-    setTimeout(() => this.measure(), 50);
+    // Try an early measure; if the track has no width yet the lazy path in
+    // onScroll() will pick it up the first time the user actually scrolls.
+    requestAnimationFrame(() => {
+      setTimeout(() => this.measure(), 100);
+    });
   }
 
   @HostListener('window:resize')
-  measure(): void {
+  onResize(): void {
+    this.measured = false;
+    this.measure();
+  }
+
+  private measure(): void {
     const track = this.trackRef?.nativeElement;
     if (!track) return;
-    this.maxShift = Math.max(track.scrollWidth - window.innerWidth, 0);
+    const shift = Math.max(track.scrollWidth - window.innerWidth, 0);
+    if (shift === 0) return; // layout not ready yet — will retry in onScroll
+    this.maxShift = shift;
     this.sectionHeight.set(`calc(100vh + ${this.maxShift}px)`);
+    this.measured = true;
     this.onScroll();
   }
 
   @HostListener('window:scroll')
   onScroll(): void {
+    // Lazy measure: if maxShift is still 0, try again now
+    if (!this.measured) {
+      this.measure();
+      if (!this.measured) return;
+    }
+
     const section = this.sectionRef?.nativeElement;
-    if (!section || this.maxShift === 0) return;
+    if (!section) return;
 
     const rect = section.getBoundingClientRect();
-    const scrollableHeight = section.offsetHeight - window.innerHeight;
-    if (scrollableHeight <= 0) return;
-
-    const progress = Math.min(Math.max(-rect.top / scrollableHeight, 0), 1);
-    this.translateX.set(-progress * this.maxShift);
+    // rect.top goes from 0 (section just hit the top) to -(maxShift) (scrolled through)
+    const scrolled = Math.min(Math.max(-rect.top, 0), this.maxShift);
+    this.translateX.set(-scrolled);
   }
 }

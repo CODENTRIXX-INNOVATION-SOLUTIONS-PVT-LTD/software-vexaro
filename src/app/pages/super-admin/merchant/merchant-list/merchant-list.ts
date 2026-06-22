@@ -73,7 +73,8 @@ export class Merchant {
       gst: '23ABCDE1234F1Z5',
       status: 'Active',
       distributorName: 'Express Distributors Ltd',
-      distributorId: 1
+      distributorId: 1,
+      totalShipments: 1250
     },
     {
       id: 2,
@@ -84,7 +85,8 @@ export class Merchant {
       gst: '23XYZAB1234P1Z8',
       status: 'Active',
       distributorName: 'Rapid Delivery Services',
-      distributorId: 2
+      distributorId: 2,
+      totalShipments: 450
     },
     {
       id: 3,
@@ -95,7 +97,8 @@ export class Merchant {
       gst: '23PQRSX5678K1Z3',
       status: 'Inactive',
       distributorName: 'Express Distributors Ltd',
-      distributorId: 1
+      distributorId: 1,
+      totalShipments: 0
     },
     {
       id: 4,
@@ -106,7 +109,8 @@ export class Merchant {
       gst: '23QWER1234T1Z9',
       status: 'Active',
       distributorName: 'Logistics Pro Solutions',
-      distributorId: 3
+      distributorId: 3,
+      totalShipments: 120
     }
   ];
 

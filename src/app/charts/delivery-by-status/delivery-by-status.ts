@@ -19,8 +19,8 @@ export class DeliveryByStatus implements AfterViewInit {
             data: [65, 25, 10],
             backgroundColor: [
               '#22c55e', // Green
-              '#f59e0b', // Orange
-              '#ef4444'  // Red
+              'rgb(232, 116, 58)', // Orange
+              'rgb(239, 68, 68)'  // Red
             ]
           }
         ]

@@ -35,7 +35,7 @@ export class RevenueChart implements AfterViewInit {
         datasets: [{
           label: 'Revenue',
           data: [12000, 19000, 15000, 25000, 22000, 30000],
-          backgroundColor: '#2563eb',
+          backgroundColor: 'rgb(11, 74, 111)',
           borderRadius: 8
         }]
       },

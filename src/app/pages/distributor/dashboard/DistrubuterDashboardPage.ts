@@ -49,7 +49,7 @@ export class DistrubuterDashboardPage {
       title: 'Assigned Deliveries',
       value: '128',
       icon: 'fas fa-box',
-      iconColor: '#2563eb',
+      iconColor: 'rgb(11, 74, 111)',
       bgColor: '#dbeafe'
     },
     {
@@ -70,7 +70,7 @@ export class DistrubuterDashboardPage {
       title: "Today's Bookings",
       value: '48',
       icon: 'fas fa-box',
-      iconColor: '#f59e0b',
+      iconColor: 'rgb(232, 116, 58)',
       bgColor: '#fef3c7'
     },
     {

@@ -21,7 +21,7 @@
     margin: 0;
     font-size: 26px;
     font-weight: 700;
-    color: #0f172a;
+    color: rgb(10, 10, 10);
 }
 
 .breadcrumb {
@@ -39,7 +39,7 @@
 }
 
 .breadcrumb a:hover {
-    color: #2563eb;
+    color: rgb(11, 74, 111);
 }
 
 .breadcrumb span {
@@ -48,14 +48,14 @@
 }
 
 .breadcrumb .active {
-    color: #0f172a;
+    color: rgb(10, 10, 10);
     font-weight: 600;
 }
 
 /* Premium Add Button */
 .add-btn {
     border: none;
-    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    background: linear-gradient(135deg, rgb(11, 74, 111), rgb(11, 74, 111));
     color: white;
     padding: 12px 22px;
     border-radius: 12px;
@@ -124,13 +124,13 @@
     margin: 4px 0 0;
     font-size: 24px;
     font-weight: 700;
-    color: #0f172a;
+    color: rgb(10, 10, 10);
 }
 
 /* Custom Colors for Metrics */
 .metric-card.total .metric-icon {
     background: #eff6ff;
-    color: #2563eb;
+    color: rgb(11, 74, 111);
 }
 
 .metric-card.active .metric-icon {
@@ -140,7 +140,7 @@
 
 .metric-card.inactive .metric-icon {
     background: #fef2f2;
-    color: #ef4444;
+    color: rgb(239, 68, 68);
 }
 
 /* Table Card Container */
@@ -190,7 +190,7 @@
 
 .search-box input:focus {
     background: white;
-    border-color: #2563eb;
+    border-color: rgb(11, 74, 111);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
@@ -230,7 +230,7 @@
 
 .select-wrapper select:focus {
     background: white;
-    border-color: #2563eb;
+    border-color: rgb(11, 74, 111);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
@@ -303,7 +303,7 @@ tbody tr:hover {
     height: 40px;
     border-radius: 10px;
     background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-    color: #1e40af;
+    color: rgb(11, 74, 111);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -326,7 +326,7 @@ tbody tr:hover {
 
 .company-name {
     font-weight: 600;
-    color: #0f172a;
+    color: rgb(10, 10, 10);
 }
 
 .company-gst {
@@ -343,7 +343,7 @@ tbody tr:hover {
 
 .contact-name {
     font-weight: 500;
-    color: #0f172a;
+    color: rgb(10, 10, 10);
 }
 
 .contact-phone {
@@ -411,7 +411,7 @@ tbody tr:hover {
 .menu-btn:hover {
     background: #f1f5f9;
     border-color: #94a3b8;
-    color: #0f172a;
+    color: rgb(10, 10, 10);
 }
 
 .dropdown-menu {
@@ -457,7 +457,7 @@ tbody tr:hover {
 
 .dropdown-menu button:hover {
     background: #f1f5f9;
-    color: #2563eb;
+    color: rgb(11, 74, 111);
 }
 
 .dropdown-menu button i {
@@ -543,7 +543,7 @@ tbody tr:hover {
 
 .distributor-link:hover .distributor-badge {
     background: #eff6ff;
-    color: #2563eb;
+    color: rgb(11, 74, 111);
     border-color: #bfdbfe;
     transform: translateY(-1px);
     box-shadow: 0 4px 10px rgba(37, 99, 235, 0.08);

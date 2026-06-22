@@ -15,7 +15,7 @@
         </div>
 
         <button class="add-btn" (click)="showModal = true">
-            <i class="fa-solid fa-plus"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
             Add Distributor
         </button>
 
@@ -26,21 +26,21 @@
     <!-- Metrics Bar -->
     <div class="metrics-grid">
         <div class="metric-card total">
-            <div class="metric-icon"><i class="fa-solid fa-building"></i></div>
+            <div class="metric-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></div>
             <div class="metric-info">
                 <h3>Total Distributors</h3>
                 <p>{{ totalDistributors }}</p>
             </div>
         </div>
         <div class="metric-card active">
-            <div class="metric-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <div class="metric-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></div>
             <div class="metric-info">
                 <h3>Active Distributors</h3>
                 <p>{{ activeDistributors }}</p>
             </div>
         </div>
         <div class="metric-card inactive">
-            <div class="metric-icon"><i class="fa-solid fa-circle-xmark"></i></div>
+            <div class="metric-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></div>
             <div class="metric-info">
                 <h3>Inactive Distributors</h3>
                 <p>{{ inactiveDistributors }}</p>
@@ -53,7 +53,7 @@
     <div class="table-card">
 
         <div class="search-box">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
             <input type="text" placeholder="Search distributor...">
         </div>
 
@@ -64,9 +64,8 @@
                     <th>#</th>
                     <th>Distributor Name</th>
                     <th>Region</th>
-                    <th>Contact Person</th>
-                    <th>Phone</th>
-                    <th>Active Shipments</th>
+                    <th>Margin</th>
+                    <th>Ledger Balance</th>
                     <th>Status</th>
                     <th>Actions</th>
                 </tr>
@@ -81,9 +80,8 @@
                     <td>{{ distributor.id }}</td>
                     <td>{{ distributor.name }}</td>
                     <td>{{ distributor.region }}</td>
-                    <td>{{ distributor.contactPerson }}</td>
-                    <td>{{ distributor.phone }}</td>
-                    <td>{{ distributor.activeShipments }}</td>
+                    <td><span class="margin-badge">{{ distributor.margin }}</span></td>
+                    <td><strong>₹{{ distributor.ledger | number:'1.0-0' }}</strong></td>
 
                     <td>
                         <span class="status" [class.active-status]="distributor.status === 'Active'"
@@ -100,7 +98,7 @@
 
                             <button class="menu-btn" (click)="toggleMenu(distributor.id); $event.stopPropagation()">
 
-                                <i class="fa-solid fa-ellipsis"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
 
                             </button>
 
@@ -109,13 +107,18 @@
                             <div class="dropdown-menu">
 
                                 <button (click)="viewDistributor(distributor.id)">
-                                    <i class="fa-solid fa-circle-info"></i>
-                                    <span>Distributor Details</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                                    <span>Distributor Profile</span>
+                                </button>
+                                
+                                <button (click)="openLedgerModal(distributor)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                                    <span>Manage Ledger</span>
                                 </button>
 
                                 @if (distributor.status === 'Pending') {
                                 <button (click)="approveDistributor(distributor.name)">
-                                    <i class="fa-solid fa-circle-check"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                     <span>Approve Request</span>
                                 </button>
                                 }
@@ -142,7 +145,7 @@
     </div>
 
     <div class="info-box">
-        <i class="fa-solid fa-circle-info"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
         <span>
             Click on <strong>"Add Distributor"</strong> button to create a new
             distributor.
@@ -168,6 +171,43 @@
     <div class="modal-container">
         <app-distributor-created-success (close)="closeSuccessModal()">
         </app-distributor-created-success>
+    </div>
+</div>
+}
+
+@if(showLedgerModal){
+<div class="modal-overlay">
+    <div class="modal-container ledger-modal">
+        <div class="modal-header">
+            <h3>Manage Wholesale Ledger</h3>
+            <button class="close-btn" (click)="closeLedgerModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></button>
+        </div>
+        <div class="modal-body">
+            <p>Distributor: <strong>{{ selectedDistributor?.name }}</strong></p>
+            <p>Current Balance: <strong>₹{{ selectedDistributor?.ledger | number:'1.0-0' }}</strong></p>
+            
+            <div class="form-group">
+                <label>Transaction Category</label>
+                <select [(ngModel)]="ledgerTransactionType">
+                    <option value="ADD">Core Top-Up (Add Funds)</option>
+                    <option value="DEDUCT">Manual Override (Deduct Funds)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Value (INR)</label>
+                <input type="number" [(ngModel)]="ledgerAmount" placeholder="Enter amount">
+            </div>
+
+            <div class="form-group">
+                <label>Corporate Bank Deposit Ref</label>
+                <input type="text" [(ngModel)]="ledgerRef" placeholder="e.g. UTR-123456789">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-cancel" (click)="closeLedgerModal()">Dismiss</button>
+            <button class="btn-primary" (click)="commitLedgerTransaction()">Commit Funding Entry</button>
+        </div>
     </div>
 </div>
 }

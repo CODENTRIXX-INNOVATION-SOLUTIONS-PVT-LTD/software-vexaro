@@ -3,7 +3,7 @@
     <!-- Page Header -->
     <div class="page-header">
         <div>
-            <h2><i class="fas fa-wallet"></i> Wallet</h2>
+            <h2><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><path d="M3 10h18v8a2 2 0 01-2 2H5a2 2 0 01-2-2v-8z M3 10l2-6h14l2 6"></path></svg> Wallet</h2>
             <div class="breadcrumb">
                 <a href="/merchant/dashboard">Dashboard</a>
                 <span>›</span>
@@ -15,25 +15,25 @@
     <!-- Tabs Navigation -->
     <div class="wallet-tabs">
         <button class="tab-btn" [class.active]="activeTab === 'balance'" (click)="changeTab('balance')">
-            <i class="fas fa-coins"></i> Current Balance
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="8" cy="8" r="6"></circle><circle cx="18" cy="14" r="6"></circle></svg> Current Balance
         </button>
         <button class="tab-btn" [class.active]="activeTab === 'transactions'" (click)="changeTab('transactions')">
-            <i class="fas fa-exchange-alt"></i> Transaction History
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> Transaction History
         </button>
         <button class="tab-btn" [class.active]="activeTab === 'requests'" (click)="changeTab('requests')">
-            <i class="fas fa-paper-plane"></i> Recharge Requests
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg> Recharge Requests
             @if (pendingRequestsCount > 0) {
                 <span class="tab-badge">{{ pendingRequestsCount }}</span>
             }
         </button>
         <button class="tab-btn" [class.active]="activeTab === 'refunds'" (click)="changeTab('refunds')">
-            <i class="fas fa-undo-alt"></i> Refund History
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> Refund History
             @if (pendingRefundsCount > 0) {
                 <span class="tab-badge">{{ pendingRefundsCount }}</span>
             }
         </button>
         <button class="tab-btn" [class.active]="activeTab === 'disputes'" (click)="changeTab('disputes')">
-            <i class="fas fa-weight-hanging"></i> Weight Disputes
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> Weight Disputes
         </button>
     </div>
 
@@ -43,45 +43,63 @@
         @if (activeTab === 'balance') {
 
         <!-- Hero Balance Card -->
-        <div class="balance-hero">
-            <div class="balance-left">
-                <div class="balance-icon-wrap"><i class="fas fa-wallet"></i></div>
-                <div class="balance-info">
-                    <span class="balance-label">Available Balance</span>
-                    <span class="balance-amount">₹{{ balance.toLocaleString('en-IN') }}</span>
-                    <span class="balance-distributor"><i class="fas fa-link"></i> {{ distributorName }}</span>
+        <div class="balance-hero" style="display: flex; gap: 20px; align-items: stretch; flex-wrap: wrap;">
+            <div class="balance-left" style="flex: 1; min-width: 300px; display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <div class="balance-icon-wrap" style="background: rgb(11, 74, 111); color: white; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 24px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><path d="M3 10h18v8a2 2 0 01-2 2H5a2 2 0 01-2-2v-8z M3 10l2-6h14l2 6"></path></svg>
+                    </div>
+                    <div class="balance-info" style="display: flex; flex-direction: column;">
+                        <span class="balance-label" style="font-size: 14px; opacity: 0.8;">Current Balance</span>
+                        <span class="balance-amount" style="font-size: 32px; font-weight: bold; color: #ffffff;">₹{{ balance.toLocaleString('en-IN') }}</span>
+                    </div>
                 </div>
             </div>
-            <button class="hero-topup-btn" (click)="changeTab('requests')">
-                <i class="fas fa-plus"></i> Request Top-up
-            </button>
+
+            <div class="balance-left" style="flex: 1; min-width: 300px; display: flex; align-items: center; justify-content: space-between; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 20px;">
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <div class="balance-icon-wrap" style="background: rgb(232, 116, 58); color: white; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 24px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <div class="balance-info" style="display: flex; flex-direction: column;">
+                        <span class="balance-label" style="font-size: 14px; opacity: 0.8;">COD Escrow (Pending)</span>
+                        <span class="balance-amount" style="font-size: 32px; font-weight: bold; color: #ffffff;">₹{{ codEscrowBalance.toLocaleString('en-IN') }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; margin-left: auto;">
+                <button class="hero-topup-btn" (click)="changeTab('requests')" style="background: rgba(255,255,255,0.18); color: white; border: 1.5px solid rgba(255,255,255,0.35); padding: 12px 24px; border-radius: 12px; font-size: 14px; font-weight: bold; cursor: pointer;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> Request Top-up
+                </button>
+            </div>
         </div>
 
         <!-- Summary Stats -->
         <div class="summary-grid">
             <div class="summary-card">
-                <div class="s-icon red"><i class="fas fa-arrow-up"></i></div>
+                <div class="s-icon red"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg></div>
                 <div class="s-info">
                     <div class="s-val">₹{{ totalSpent.toLocaleString('en-IN') }}</div>
                     <div class="s-label">Total Spent</div>
                 </div>
             </div>
             <div class="summary-card">
-                <div class="s-icon amber"><i class="fas fa-clock"></i></div>
+                <div class="s-icon amber"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
                 <div class="s-info">
                     <div class="s-val">{{ pendingRequestsCount }}</div>
                     <div class="s-label">Pending Recharges</div>
                 </div>
             </div>
             <div class="summary-card">
-                <div class="s-icon green"><i class="fas fa-undo-alt"></i></div>
+                <div class="s-icon green"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></div>
                 <div class="s-info">
                     <div class="s-val">{{ pendingRefundsCount }}</div>
                     <div class="s-label">Pending Refunds</div>
                 </div>
             </div>
             <div class="summary-card">
-                <div class="s-icon purple"><i class="fas fa-weight-hanging"></i></div>
+                <div class="s-icon purple"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></div>
                 <div class="s-info">
                     <div class="s-val">₹{{ totalDisputeDeductions.toLocaleString('en-IN') }}</div>
                     <div class="s-label">Dispute Deductions</div>
@@ -123,14 +141,14 @@
 
             @if (selectedPackage) {
             <div class="selected-preview">
-                <i class="fas fa-circle-check"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                 Requesting <strong>₹{{ selectedPackage.toLocaleString('en-IN') }}</strong> via <strong>{{ topUpMethod }}</strong>
             </div>
             }
 
             <div class="form-actions">
                 <button class="btn-submit" (click)="submitTopUp()" [disabled]="!selectedPackage">
-                    <i class="fas fa-paper-plane"></i> Send Request to Distributor
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg> Send Request to Distributor
                 </button>
             </div>
         </div>
@@ -164,7 +182,11 @@
                         <td>{{ txn.description }}</td>
                         <td>
                             <span class="type-badge" [class.credit]="txn.type === 'credit'" [class.debit]="txn.type === 'debit'">
-                                <i class="fas" [class.fa-arrow-down]="txn.type === 'credit'" [class.fa-arrow-up]="txn.type === 'debit'"></i>
+                                @if (txn.type === 'credit') {
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+                                } @else {
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+                                }
                                 {{ txn.type === 'credit' ? 'Credit' : 'Debit' }}
                             </span>
                         </td>
@@ -193,7 +215,7 @@
                     <p class="card-sub">Top-up requests sent to your distributor</p>
                 </div>
                 <button class="add-btn" (click)="changeTab('balance')">
-                    <i class="fas fa-plus"></i> New Request
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> New Request
                 </button>
             </div>
             <table>
@@ -275,7 +297,7 @@
         @if (activeTab === 'disputes') {
 
         <div class="info-notice">
-            <i class="fas fa-info-circle"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             <span>Weight dispute deductions are applied when the actual shipment weight differs from the declared weight. <strong>Disputed</strong> entries can be raised as a support ticket.</span>
         </div>
 
@@ -325,12 +347,12 @@
                         <td>
                             @if (d.status === 'Applied') {
                             <button class="contest-btn" (click)="openContest(d)">
-                                <i class="fas fa-flag"></i> Contest
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> Contest
                             </button>
                             } @else if (d.status === 'Disputed') {
-                            <span class="disputed-tag"><i class="fas fa-clock"></i> Under Review</span>
+                            <span class="disputed-tag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Under Review</span>
                             } @else {
-                            <span class="resolved-tag"><i class="fas fa-circle-check"></i> Resolved</span>
+                            <span class="resolved-tag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Resolved</span>
                             }
                         </td>
                     </tr>
@@ -350,13 +372,13 @@
 
         <div class="modal-header">
             <div class="modal-title-group">
-                <div class="modal-icon"><i class="fas fa-flag"></i></div>
+                <div class="modal-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></div>
                 <div>
                     <h3>Contest Weight Dispute</h3>
                     <p class="modal-sub">AWB: <strong>{{ contestingDispute.awb }}</strong> &nbsp;|&nbsp; Deduction: <strong class="red-text">-₹{{ contestingDispute.deduction }}</strong></p>
                 </div>
             </div>
-            <button class="modal-close-btn" (click)="closeContest()"><i class="fas fa-times"></i></button>
+            <button class="modal-close-btn" (click)="closeContest()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
         </div>
 
         <div class="modal-body">
@@ -367,7 +389,7 @@
                     <span class="chip-label">Billed Weight</span>
                     <span class="chip-val">{{ contestingDispute.billedWeight }} kg</span>
                 </div>
-                <i class="fas fa-arrow-right chip-arrow"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="chip-arrow svg-icon"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 <div class="detail-chip red">
                     <span class="chip-label">Actual (Charged)</span>
                     <span class="chip-val">{{ contestingDispute.actualWeight }} kg</span>
@@ -393,14 +415,14 @@
             <div class="modal-field">
                 <label>Attach Evidence <span class="label-hint">(photos, invoice, scale screenshot)</span></label>
                 <div class="upload-zone">
-                    <i class="fas fa-cloud-upload-alt"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path><polyline points="12 12 12 16"></polyline><polyline points="9 13 12 10 15 13"></polyline></svg>
                     <span>Drag &amp; drop files or <label class="upload-link">browse<input type="file" multiple accept="image/*,.pdf" (change)="onFileChange($event)" hidden /></label></span>
                     <span class="upload-hint">Supported: JPG, PNG, PDF &mdash; Max 5MB each</span>
                 </div>
                 @if (selectedFileNames.length > 0) {
                 <ul class="file-list">
                     @for (name of selectedFileNames; track name) {
-                    <li><i class="fas fa-file-image"></i> {{ name }}</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><circle cx="9.5" cy="11.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg> {{ name }}</li>
                     }
                 </ul>
                 }
@@ -411,7 +433,7 @@
         <div class="modal-footer">
             <button class="btn-cancel" (click)="closeContest()">Cancel</button>
             <button class="btn-submit" (click)="submitContest()" [disabled]="!contestNote.trim()">
-                <i class="fas fa-paper-plane"></i> Submit Dispute to Distributor
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg> Submit Dispute to Distributor
             </button>
         </div>
 

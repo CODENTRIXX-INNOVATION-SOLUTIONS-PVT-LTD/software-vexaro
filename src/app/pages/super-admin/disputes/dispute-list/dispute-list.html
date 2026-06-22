@@ -1,0 +1,96 @@
+<div class="header-section">
+    <h2>Global Weight Disputes</h2>
+    <p>Manage and resolve weight disputes raised across the platform</p>
+</div>
+
+<div class="filter-bar">
+    <div class="form-row">
+        <select [(ngModel)]="statusFilter" class="status-select">
+            <option>All Statuses</option>
+            <option>Pending</option>
+            <option>Approved</option>
+            <option>Rejected</option>
+        </select>
+        <select [(ngModel)]="distributorFilter" class="status-select">
+            <option>All Distributors</option>
+            <option>SpeedX Logistics</option>
+            <option>FastTrack Couriers</option>
+            <option>Global Transit</option>
+        </select>
+        <select [(ngModel)]="dateFilter" class="status-select">
+            <option>Any Date</option>
+            <option>Today</option>
+            <option>This Week</option>
+            <option>This Month</option>
+        </select>
+    </div>
+</div>
+
+<div class="table-card mt-4">
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Dispute ID</th>
+                    <th>Date</th>
+                    <th>AWB Number</th>
+                    <th>Merchant / Distributor</th>
+                    <th>Weight (Declared vs Actual)</th>
+                    <th>Amount Disputed</th>
+                    <th>Proof</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (d of disputes; track d.id) {
+                <tr>
+                    <td><strong>{{ d.id }}</strong></td>
+                    <td>{{ d.date }}</td>
+                    <td class="awb-cell">{{ d.awb }}</td>
+                    <td>
+                        <div class="entity-info">
+                            <strong>{{ d.merchantName }}</strong>
+                            <span>{{ d.distributorName }}</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="weight-info">
+                            <span class="declared">{{ d.declaredWeight }} kg</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            <span class="actual">{{ d.actualWeight }} kg</span>
+                            <span class="diff">(+{{ d.difference }} kg)</span>
+                        </div>
+                    </td>
+                    <td class="amount-cell">₹{{ d.amount }}</td>
+                    <td>
+                        @if(d.proofUrl) {
+                            <button class="icon-btn" (click)="viewProof(d)" title="View Proof"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><circle cx="9.5" cy="11.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg> View</button>
+                        } @else {
+                            <span class="text-muted">None</span>
+                        }
+                    </td>
+                    <td>
+                        <span class="status-badge"
+                            [class.pending]="d.status === 'Pending'"
+                            [class.approved]="d.status === 'Approved'"
+                            [class.rejected]="d.status === 'Rejected'">
+                            {{ d.status }}
+                        </span>
+                    </td>
+                    <td>
+                        @if (d.status === 'Pending') {
+                            <div class="action-buttons">
+                                <button class="btn-approve" (click)="approveDispute(d)" title="Approve & Reverse Charges"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><polyline points="20 6 9 17 4 12"></polyline></svg></button>
+                                <button class="btn-reject" (click)="rejectDispute(d)" title="Reject & Close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+                            </div>
+                        } @else {
+                            <span class="text-muted">Resolved</span>
+                        }
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

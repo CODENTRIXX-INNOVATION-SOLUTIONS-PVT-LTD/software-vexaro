@@ -76,7 +76,7 @@ h2 {
     font-size: 24px;
     font-weight: 700;
 
-    color: #0f172a;
+    color: rgb(10, 10, 10);
 }
 
 .subtitle {
@@ -105,7 +105,7 @@ h2 {
     font-size: 16px;
     font-weight: 600;
 
-    color: #1e293b;
+    color: rgb(10, 10, 10);
 }
 
 .credential-card label {
@@ -155,7 +155,7 @@ h2 {
 
     cursor: pointer;
 
-    color: #2563eb;
+    color: rgb(11, 74, 111);
     font-size: 16px;
 
     transition: .3s;
@@ -181,7 +181,7 @@ h2 {
 }
 
 .info i {
-    color: #2563eb;
+    color: rgb(11, 74, 111);
 }
 
 /* ==========================
@@ -197,7 +197,7 @@ h2 {
     border: none;
     border-radius: 10px;
 
-    background: #2563eb;
+    background: rgb(11, 74, 111);
     color: white;
 
     font-size: 15px;
@@ -209,7 +209,7 @@ h2 {
 }
 
 .done-btn:hover {
-    background: #1d4ed8;
+    background: rgb(11, 74, 111);
 }
 
 /* ==========================

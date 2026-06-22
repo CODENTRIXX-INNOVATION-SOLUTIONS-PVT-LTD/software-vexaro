@@ -1,67 +1,73 @@
-import { Directive, ElementRef, Input, OnInit } from '@angular/core';
+import { Directive, ElementRef, Input, AfterViewInit, OnDestroy } from '@angular/core';
 
 @Directive({
     selector: '[appCountUp]',
     standalone: true
 })
-export class CountUpDirective implements OnInit {
+export class CountUpDirective implements AfterViewInit, OnDestroy {
     @Input() countTo: number = 0;
     @Input() countDecimals: number = 0;
     @Input() countSuffix: string = '';
     @Input() countDuration: number = 2000;
 
+    private observer?: IntersectionObserver;
+
     constructor(private el: ElementRef) { }
 
-    ngOnInit() {
-        this.animateCountUp();
-    }
+    ngAfterViewInit() {
+        const element = this.el.nativeElement as HTMLElement;
 
-    private animateCountUp() {
-        const element = this.el.nativeElement;
-        const startValue = 0;
-        const endValue = this.countTo;
-        const duration = this.countDuration;
-        const decimals = this.countDecimals;
-        const startTime = Date.now();
+        // Show a placeholder until the count-up fires
+        element.textContent = (0).toFixed(this.countDecimals) + this.countSuffix;
 
-        const animate = () => {
-            const currentTime = Date.now();
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-
-            // Easing function for smooth animation
-            const easeProgress = progress < 0.5
-                ? 2 * progress * progress
-                : -1 + (4 - 2 * progress) * progress;
-
-            const currentValue = startValue + (endValue - startValue) * easeProgress;
-            const displayValue = currentValue.toFixed(decimals);
-
-            element.textContent = displayValue + this.countSuffix;
-
-            if (progress < 1) {
-                requestAnimationFrame(animate);
-            }
-        };
-
-        // Use Intersection Observer to start animation when element enters viewport
         if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver(
+            this.observer = new IntersectionObserver(
                 (entries) => {
                     entries.forEach((entry) => {
                         if (entry.isIntersecting) {
-                            animate();
-                            observer.unobserve(element);
+                            this.animateCountUp(element);
+                            this.observer?.unobserve(element);
                         }
                     });
                 },
-                { threshold: 0.1 }
+                {
+                    threshold: 0,        // fire as soon as the element enters the viewport
+                    rootMargin: '0px'
+                }
             );
 
-            observer.observe(element);
+            this.observer.observe(element);
         } else {
-            // Fallback for browsers without IntersectionObserver
-            animate();
+            // Fallback: run immediately
+            this.animateCountUp(element);
         }
+    }
+
+    ngOnDestroy() {
+        this.observer?.disconnect();
+    }
+
+    private animateCountUp(element: HTMLElement) {
+        const endValue = this.countTo;
+        const duration = this.countDuration;
+        const decimals = this.countDecimals;
+        const startTime = performance.now();
+
+        const tick = (now: number) => {
+            const elapsed = now - startTime;
+            const rawProgress = Math.min(elapsed / duration, 1);
+
+            // Ease-out-quart
+            const eased = 1 - Math.pow(1 - rawProgress, 4);
+            const current = endValue * eased;
+
+            element.textContent = current.toFixed(decimals) + this.countSuffix;
+
+            if (rawProgress < 1) {
+                requestAnimationFrame(tick);
+            }
+        };
+
+        requestAnimationFrame(tick);
     }
 }

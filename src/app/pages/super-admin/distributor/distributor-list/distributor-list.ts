@@ -3,10 +3,11 @@ import { Router, RouterLink } from '@angular/router';
 import { AddDistributorModal } from '../../../../models/add-distributor-modal/add-distributor-modal';
 import { DistributorCreatedSuccess } from '../../../../models/distributor-created-success/distributor-created-success';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { FinancialStore } from '../../../../shared/financial-store';
 @Component({
   selector: 'app-distributor-list',
-  imports: [RouterLink, AddDistributorModal, DistributorCreatedSuccess, CommonModule],
+  imports: [RouterLink, AddDistributorModal, DistributorCreatedSuccess, CommonModule, FormsModule],
   templateUrl: './distributor-list.html',
   styleUrl: './distributor-list.css'
 })
@@ -17,6 +18,13 @@ export class DistributorList {
   showModal = false;
   showAddModal = false;
   showSuccessModal = false;
+
+  // Ledger Modal State
+  showLedgerModal = false;
+  selectedDistributor: any = null;
+  ledgerAmount: number | null = null;
+  ledgerRef: string = '';
+  ledgerTransactionType: 'ADD' | 'DEDUCT' = 'ADD';
 
   activeMenu: number | null = null;
 
@@ -45,6 +53,44 @@ export class DistributorList {
     this.showSuccessModal = true;
   }
 
+  openLedgerModal(dist: any) {
+    this.selectedDistributor = dist;
+    this.showLedgerModal = true;
+    this.activeMenu = null;
+  }
+
+  closeLedgerModal() {
+    this.showLedgerModal = false;
+    this.selectedDistributor = null;
+    this.ledgerAmount = null;
+    this.ledgerRef = '';
+    this.ledgerTransactionType = 'ADD';
+  }
+
+  commitLedgerTransaction() {
+    if (!this.ledgerAmount || this.ledgerAmount <= 0) {
+      alert('Please enter a valid amount.');
+      return;
+    }
+    if (!this.ledgerRef.trim()) {
+      alert('Please enter a reference number.');
+      return;
+    }
+
+    if (this.ledgerTransactionType === 'ADD') {
+      this.selectedDistributor.ledger += this.ledgerAmount;
+    } else {
+      if (this.selectedDistributor.ledger < this.ledgerAmount) {
+         alert('Insufficient balance to deduct!');
+         return;
+      }
+      this.selectedDistributor.ledger -= this.ledgerAmount;
+    }
+
+    alert(`Ledger successfully updated. New Balance: ₹${this.selectedDistributor.ledger}`);
+    this.closeLedgerModal();
+  }
+
   get totalDistributors() {
     return this.allDistributors.length;
   }
@@ -66,45 +112,40 @@ export class DistributorList {
       id: 1,
       name: 'SpeedX Logistics',
       region: 'North Zone',
-      contactPerson: 'Amit Verma',
-      phone: '9876543210',
-      activeShipments: 31,
+      margin: '+12%',
+      ledger: 450000,
       status: 'Active'
     },
     {
       id: 2,
       name: 'FastWay Distributors',
       region: 'West Zone',
-      contactPerson: 'Neha Singh',
-      phone: '9123456780',
-      activeShipments: 16,
+      margin: '+10%',
+      ledger: 120000,
       status: 'Active'
     },
     {
       id: 3,
       name: 'QuickMove Logistics',
       region: 'South Zone',
-      contactPerson: 'Rohit Kumar',
-      phone: '9988776655',
-      activeShipments: 51,
+      margin: '+15%',
+      ledger: 0,
       status: 'Inactive'
     },
     {
       id: 4,
       name: 'Swift Distributors',
       region: 'East Zone',
-      contactPerson: 'Pooja Sharma',
-      phone: '9001122334',
-      activeShipments: 13,
+      margin: '+10%',
+      ledger: 250000,
       status: 'Active'
     },
     {
       id: 5,
       name: 'Global Reach Dist.',
       region: 'Central Zone',
-      contactPerson: 'Vijay Patel',
-      phone: '8877665544',
-      activeShipments: 12,
+      margin: '+8%',
+      ledger: 75000,
       status: 'Active'
     }
   ];
@@ -127,9 +168,8 @@ export class DistributorList {
       id: 10 + index,
       name: req.distributorName,
       region: req.region,
-      contactPerson: 'Ketan Meena',
-      phone: req.phone,
-      activeShipments: 0,
+      margin: '+10%',
+      ledger: 0,
       status: req.status
     }));
     return [...this.distributors, ...mappedRequests];

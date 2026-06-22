@@ -59,6 +59,7 @@ export class Payments {
 
   // ─── Balance ──────────────────────────────────────────────────────────────
   balance: number = 12400;
+  codEscrowBalance: number = 4500;
   distributorName: string = 'SpeedX Logistics';
 
   // Top-up request inline form
@@ -112,6 +113,7 @@ export class Payments {
 
   // ─── Transaction History ──────────────────────────────────────────────────
   transactions: MerchantTransaction[] = [
+    { id: 'TXN2000', date: '17 Jun 2026', description: 'COD Remittance Release',          type: 'credit', amount: 8500,  status: 'Success', reference: 'COD9912' },
     { id: 'TXN2001', date: '17 Jun 2026', description: 'Shipment Charge — AWB889012',    type: 'debit',  amount: 320,   status: 'Success', reference: 'AWB889012' },
     { id: 'TXN2002', date: '17 Jun 2026', description: 'Wallet Top-up Approved',          type: 'credit', amount: 10000, status: 'Success', reference: 'REQ1001' },
     { id: 'TXN2003', date: '16 Jun 2026', description: 'Shipment Charge — AWB779234',    type: 'debit',  amount: 180,   status: 'Success', reference: 'AWB779234' },

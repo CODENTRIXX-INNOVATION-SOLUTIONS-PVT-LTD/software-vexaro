@@ -18,7 +18,7 @@ export class MerchantShipments {
       value: '5',
       icon: 'fas fa-boxes',
       bgColor: '#dbeafe',
-      iconColor: '#2563eb',
+      iconColor: 'rgb(11, 74, 111)',
       percentage: 12,
       symbol: '+',
       compairTo: 'vs last month'
@@ -280,10 +280,10 @@ export class MerchantShipments {
   selectedCourierIndex = signal(0);
 
   couriers = [
-    { name: 'Delhivery', type: 'Surface', rate: 120.00, logo: 'fas fa-truck-fast', color: '#2563eb' },
-    { name: 'Blue Dart', type: 'Air', rate: 248.00, logo: 'fas fa-plane-departure', color: '#0f172a' },
+    { name: 'Delhivery', type: 'Surface', rate: 120.00, logo: 'fas fa-truck-fast', color: 'rgb(11, 74, 111)' },
+    { name: 'Blue Dart', type: 'Air', rate: 248.00, logo: 'fas fa-plane-departure', color: 'rgb(10, 10, 10)' },
     { name: 'Ecom Express', type: 'Surface', rate: 112.00, logo: 'fas fa-shipping-fast', color: '#16a34a' },
-    { name: 'XpressBees', type: 'Surface', rate: 96.00, logo: 'fas fa-bolt', color: '#ea580c' }
+    { name: 'XpressBees', type: 'Surface', rate: 96.00, logo: 'fas fa-bolt', color: 'rgb(232, 116, 58)' }
   ];
 
   get totalAmount(): number {

@@ -25,7 +25,7 @@ export class AdminPayment {
       value: '₹89,000',
       icon: 'fas fa-wallet',
       bgColor: '#DBEAFE',
-      iconColor: '#2563EB'
+      iconColor: 'rgb(11, 74, 111)'
     },
     {
       title: 'Total Admin Commission',
@@ -216,7 +216,7 @@ export class AdminPayment {
         value: '₹' + totalBalance.toLocaleString('en-IN'),
         icon: 'fas fa-wallet',
         bgColor: '#DBEAFE',
-        iconColor: '#2563EB'
+        iconColor: 'rgb(11, 74, 111)'
       },
       {
         title: 'Total Admin Commission',

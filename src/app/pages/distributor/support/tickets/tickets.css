@@ -1,8 +1,8 @@
 .header-section { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; margin-bottom: 20px; }
 .header-section h2 { margin: 0; font-size: 24px; color: #111827; }
 
-.view-btn { border: none; background: #2563eb; color: white; padding: 10px 18px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: 600; text-decoration: none; }
-.view-btn:hover { background: #1d4ed8; }
+.view-btn { border: none; background: rgb(11, 74, 111); color: white; padding: 10px 18px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: 600; text-decoration: none; }
+.view-btn:hover { background: rgb(11, 74, 111); }
 
 .shipment-card { background: #fff; border-radius: 18px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
 

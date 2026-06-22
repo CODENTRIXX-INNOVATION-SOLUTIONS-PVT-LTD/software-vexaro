@@ -14,7 +14,7 @@
     margin: 0;
     font-size: 30px;
     font-weight: 700;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
 }
 
 .breadcrumb {
@@ -32,7 +32,7 @@
 }
 
 .breadcrumb a:hover {
-    color: #2563eb;
+    color: rgb(11, 74, 111);
 }
 
 .breadcrumb span {
@@ -41,13 +41,13 @@
 }
 
 .breadcrumb .active {
-    color: #1e293b;
+    color: rgb(10, 10, 10);
     font-weight: 600;
 }
 
 .add-btn {
     border: none;
-    background: #2563eb;
+    background: rgb(11, 74, 111);
     color: white;
     padding: 12px 22px;
     border-radius: 10px;
@@ -62,7 +62,7 @@
 }
 
 .add-btn:hover {
-    background: #1d4ed8;
+    background: rgb(11, 74, 111);
     box-shadow: 0 4px 18px rgba(37, 99, 235, 0.35);
 }
 
@@ -101,7 +101,7 @@
 }
 
 .search-box input:focus {
-    border-color: #2563eb;
+    border-color: rgb(11, 74, 111);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
@@ -136,12 +136,12 @@ tbody tr:hover {
 
 .tracking-id {
     font-weight: 600;
-    color: #2563eb;
+    color: rgb(11, 74, 111);
 }
 
 .amount {
     font-weight: 600;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
 }
 
 .courier-badge {
@@ -232,7 +232,7 @@ tbody tr:hover {
     margin: 0;
     font-size: 22px;
     font-weight: 700;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
 }
 
 .modal-header-bar p {
@@ -257,7 +257,7 @@ tbody tr:hover {
 }
 
 .close-modal-btn:hover {
-    color: #1e293b;
+    color: rgb(10, 10, 10);
     background: #f1f5f9;
 }
 
@@ -324,13 +324,13 @@ tbody tr:hover {
 }
 
 .step-item.active .step-badge {
-    border-color: #2563eb;
-    background: #2563eb;
+    border-color: rgb(11, 74, 111);
+    background: rgb(11, 74, 111);
     color: white;
 }
 
 .step-item.active .step-title {
-    color: #2563eb;
+    color: rgb(11, 74, 111);
 }
 
 /* Completed step */
@@ -341,7 +341,7 @@ tbody tr:hover {
 }
 
 .step-item.completed .step-title {
-    color: #1e293b;
+    color: rgb(10, 10, 10);
 }
 
 /* Form Panel Card */
@@ -372,7 +372,7 @@ tbody tr:hover {
     margin: 0;
     font-size: 18px;
     font-weight: 700;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
 }
 
 .header-icon {
@@ -380,11 +380,11 @@ tbody tr:hover {
 }
 
 .blue-icon {
-    color: #2563eb;
+    color: rgb(11, 74, 111);
 }
 
 .orange-icon {
-    color: #ea580c;
+    color: rgb(232, 116, 58);
 }
 
 .purple-icon {
@@ -414,7 +414,7 @@ tbody tr:hover {
     border: 1px solid #cbd5e1;
     border-radius: 8px;
     font-size: 14px;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
     outline: none;
     transition: 0.2s;
     background: white;
@@ -422,7 +422,7 @@ tbody tr:hover {
 }
 
 .form-control:focus {
-    border-color: #2563eb;
+    border-color: rgb(11, 74, 111);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
@@ -474,7 +474,7 @@ textarea.form-control {
     background: transparent;
     padding: 12px;
     border-radius: 8px;
-    color: #2563eb;
+    color: rgb(11, 74, 111);
     font-weight: 600;
     font-size: 13px;
     cursor: pointer;
@@ -487,7 +487,7 @@ textarea.form-control {
 }
 
 .dashed-btn:hover {
-    border-color: #2563eb;
+    border-color: rgb(11, 74, 111);
     background: #f0f6ff;
 }
 
@@ -509,7 +509,7 @@ textarea.form-control {
 .checkbox-label input[type="checkbox"] {
     width: 16px;
     height: 16px;
-    accent-color: #2563eb;
+    accent-color: rgb(11, 74, 111);
     cursor: pointer;
 }
 
@@ -535,7 +535,7 @@ textarea.form-control {
 }
 
 .primary-btn {
-    background: #2563eb;
+    background: rgb(11, 74, 111);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -551,7 +551,7 @@ textarea.form-control {
 }
 
 .primary-btn:hover {
-    background: #1d4ed8;
+    background: rgb(11, 74, 111);
     box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
 }
 
@@ -587,7 +587,7 @@ textarea.form-control {
     margin: 0 0 12px 0;
     font-size: 14px;
     font-weight: 700;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
     border-bottom: 1px solid #e2e8f0;
     padding-bottom: 6px;
 }
@@ -618,11 +618,11 @@ textarea.form-control {
 }
 
 .summary-item.full-width .from-icon {
-    color: #2563eb;
+    color: rgb(11, 74, 111);
 }
 
 .summary-item.full-width .to-icon {
-    color: #ea580c;
+    color: rgb(232, 116, 58);
 }
 
 .summary-item .label {
@@ -635,7 +635,7 @@ textarea.form-control {
 .summary-item .value {
     font-size: 13px;
     font-weight: 500;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
     margin: 0;
 }
 
@@ -644,7 +644,7 @@ textarea.form-control {
     margin: 0 0 12px 0;
     font-size: 14px;
     font-weight: 700;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
 }
 
 .courier-list {
@@ -671,7 +671,7 @@ textarea.form-control {
 }
 
 .courier-item.selected {
-    border-color: #2563eb;
+    border-color: rgb(11, 74, 111);
     background: #f0f6ff;
 }
 
@@ -695,7 +695,7 @@ textarea.form-control {
     margin: 0;
     font-size: 13px;
     font-weight: 600;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
 }
 
 .courier-type {
@@ -712,7 +712,7 @@ textarea.form-control {
 .courier-rate {
     font-size: 14px;
     font-weight: 700;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
 }
 
 .radio-circle {
@@ -726,8 +726,8 @@ textarea.form-control {
 }
 
 .courier-item.selected .radio-circle {
-    border-color: #2563eb;
-    background: #2563eb;
+    border-color: rgb(11, 74, 111);
+    background: rgb(11, 74, 111);
 }
 
 .courier-item.selected .radio-circle::after {
@@ -765,7 +765,7 @@ textarea.form-control {
     margin: 2px 0 0 0;
     font-size: 20px;
     font-weight: 800;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
 }
 
 .create-shipment-btn {
@@ -793,7 +793,7 @@ textarea.form-control {
     height: 36px;
     border-radius: 8px;
     background: #f0f6ff;
-    color: #2563eb;
+    color: rgb(11, 74, 111);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -810,7 +810,7 @@ textarea.form-control {
 .badge-text strong {
     font-size: 13px;
     font-weight: 600;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
 }
 
 .badge-text span {
@@ -978,7 +978,7 @@ textarea.form-control {
 }
 
 .info-group-card h4 i {
-    color: #2563eb;
+    color: rgb(11, 74, 111);
 }
 
 .info-grid-2col {
@@ -1015,24 +1015,24 @@ textarea.form-control {
 .detail-value {
     font-size: 13px;
     font-weight: 500;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
     margin: 0;
 }
 
 .detail-value.highlight {
-    color: #2563eb;
+    color: rgb(11, 74, 111);
     font-weight: 700;
     font-size: 15px;
 }
 
 .detail-value.amount {
     font-weight: 700;
-    color: #0f172a;
+    color: rgb(10, 10, 10);
 }
 
 .detail-value.contact-name {
     font-weight: 600;
-    color: #0f172a;
+    color: rgb(10, 10, 10);
     font-size: 14px;
 }
 
@@ -1089,7 +1089,7 @@ textarea.form-control {
 }
 
 .timeline-card h4 i {
-    color: #2563eb;
+    color: rgb(11, 74, 111);
 }
 
 .tracking-timeline-vertical {
@@ -1143,7 +1143,7 @@ textarea.form-control {
 }
 
 .timeline-node.active .node-indicator i {
-    color: #2563eb;
+    color: rgb(11, 74, 111);
 }
 
 .timeline-node.active .node-line {
@@ -1162,11 +1162,11 @@ textarea.form-control {
 }
 
 .timeline-node.completed .node-title {
-    color: #1e293b;
+    color: rgb(10, 10, 10);
 }
 
 .timeline-node.active .node-title {
-    color: #2563eb;
+    color: rgb(11, 74, 111);
 }
 
 .node-time {

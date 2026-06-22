@@ -13,7 +13,7 @@
     margin: 0;
     font-size: 30px;
     font-weight: 700;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
 }
 
 .breadcrumb {
@@ -31,7 +31,7 @@
 }
 
 .breadcrumb a:hover {
-    color: #2563eb;
+    color: rgb(11, 74, 111);
 }
 
 .breadcrumb span {
@@ -40,7 +40,7 @@
 }
 
 .breadcrumb .active {
-    color: #1e293b;
+    color: rgb(10, 10, 10);
     font-weight: 600;
 }
 
@@ -111,14 +111,14 @@
 }
 
 .step-item.active .step-badge {
-    border-color: #2563eb;
-    background: #2563eb;
+    border-color: rgb(11, 74, 111);
+    background: rgb(11, 74, 111);
     color: white;
     box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
 }
 
 .step-item.active .step-title {
-    color: #2563eb;
+    color: rgb(11, 74, 111);
 }
 
 /* Step Completed State */
@@ -133,7 +133,7 @@
 }
 
 .step-item.completed .step-title {
-    color: #1e293b;
+    color: rgb(10, 10, 10);
     font-weight: 500;
 }
 
@@ -166,8 +166,8 @@
     font-size: 22px;
 }
 
-.blue-icon { color: #2563eb; }
-.orange-icon { color: #ea580c; }
+.blue-icon { color: rgb(11, 74, 111); }
+.orange-icon { color: rgb(232, 116, 58); }
 .purple-icon { color: #7c3aed; }
 .green-icon { color: #16a34a; }
 
@@ -175,7 +175,7 @@
     margin: 0;
     font-size: 20px;
     font-weight: 700;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
 }
 
 /* ================= FORM CONTROLS ================= */
@@ -197,7 +197,7 @@
     border: 1px solid #cbd5e1;
     border-radius: 10px;
     font-size: 14px;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
     outline: none;
     transition: all 0.2s ease;
     background: #fff;
@@ -205,7 +205,7 @@
 }
 
 .form-control:focus {
-    border-color: #2563eb;
+    border-color: rgb(11, 74, 111);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
@@ -257,7 +257,7 @@ textarea.form-control {
     background: transparent;
     padding: 14px;
     border-radius: 10px;
-    color: #2563eb;
+    color: rgb(11, 74, 111);
     font-weight: 600;
     font-size: 14px;
     cursor: pointer;
@@ -270,7 +270,7 @@ textarea.form-control {
 }
 
 .dashed-btn:hover {
-    border-color: #2563eb;
+    border-color: rgb(11, 74, 111);
     background: #f0f6ff;
 }
 
@@ -293,7 +293,7 @@ textarea.form-control {
 .checkbox-label input[type="checkbox"] {
     width: 18px;
     height: 18px;
-    accent-color: #2563eb;
+    accent-color: rgb(11, 74, 111);
     cursor: pointer;
 }
 
@@ -320,7 +320,7 @@ textarea.form-control {
 
 /* ================= BUTTONS ================= */
 .primary-btn {
-    background: #2563eb;
+    background: rgb(11, 74, 111);
     color: white;
     border: none;
     padding: 12px 24px;
@@ -336,7 +336,7 @@ textarea.form-control {
 }
 
 .primary-btn:hover {
-    background: #1d4ed8;
+    background: rgb(11, 74, 111);
     box-shadow: 0 4px 18px rgba(37, 99, 235, 0.4);
 }
 
@@ -357,7 +357,7 @@ textarea.form-control {
 
 .secondary-btn:hover {
     background: #f8fafc;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
     border-color: #94a3b8;
 }
 
@@ -373,7 +373,7 @@ textarea.form-control {
     margin: 0 0 16px 0;
     font-size: 15px;
     font-weight: 700;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
     border-bottom: 1px solid #e2e8f0;
     padding-bottom: 8px;
 }
@@ -404,11 +404,11 @@ textarea.form-control {
 }
 
 .summary-item.full-width .from-icon {
-    color: #2563eb;
+    color: rgb(11, 74, 111);
 }
 
 .summary-item.full-width .to-icon {
-    color: #ea580c;
+    color: rgb(232, 116, 58);
 }
 
 .summary-item .label {
@@ -422,7 +422,7 @@ textarea.form-control {
 .summary-item .value {
     font-size: 14px;
     font-weight: 500;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
     margin: 0;
 }
 
@@ -431,7 +431,7 @@ textarea.form-control {
     margin: 0 0 16px 0;
     font-size: 15px;
     font-weight: 700;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
 }
 
 .courier-list {
@@ -458,9 +458,9 @@ textarea.form-control {
 }
 
 .courier-item.selected {
-    border-color: #2563eb;
+    border-color: rgb(11, 74, 111);
     background: #f0f6ff;
-    box-shadow: 0 0 0 1px #2563eb;
+    box-shadow: 0 0 0 1px rgb(11, 74, 111);
 }
 
 .courier-left {
@@ -483,7 +483,7 @@ textarea.form-control {
     margin: 0;
     font-size: 14px;
     font-weight: 600;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
 }
 
 .courier-type {
@@ -500,7 +500,7 @@ textarea.form-control {
 .courier-rate {
     font-size: 16px;
     font-weight: 700;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
 }
 
 .radio-circle {
@@ -518,8 +518,8 @@ textarea.form-control {
 }
 
 .courier-item.selected .radio-circle {
-    border-color: #2563eb;
-    background: #2563eb;
+    border-color: rgb(11, 74, 111);
+    background: rgb(11, 74, 111);
 }
 
 .courier-item.selected .radio-circle::after {
@@ -557,7 +557,7 @@ textarea.form-control {
     margin: 4px 0 0 0;
     font-size: 24px;
     font-weight: 800;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
 }
 
 .create-shipment-btn {
@@ -586,7 +586,7 @@ textarea.form-control {
     height: 42px;
     border-radius: 10px;
     background: #f0f6ff;
-    color: #2563eb;
+    color: rgb(11, 74, 111);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -603,7 +603,7 @@ textarea.form-control {
 .badge-text strong {
     font-size: 14px;
     font-weight: 600;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
 }
 
 .badge-text span {

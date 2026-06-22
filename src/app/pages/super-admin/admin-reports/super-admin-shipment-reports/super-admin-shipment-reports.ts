@@ -27,8 +27,8 @@ export class SuperAdminShipmentReports {
           {
             label: 'Shipments',
             data: [120, 180, 160, 240, 210, 280, 300],
-            borderColor: '#2563eb',
-            backgroundColor: '#2563eb',
+            borderColor: 'rgb(11, 74, 111)',
+            backgroundColor: 'rgb(11, 74, 111)',
             tension: 0.4
           }
         ]
@@ -53,8 +53,8 @@ export class SuperAdminShipmentReports {
             data: [980, 180, 45, 45],
             backgroundColor: [
               '#22c55e',
-              '#f59e0b',
-              '#ef4444',
+              'rgb(232, 116, 58)',
+              'rgb(239, 68, 68)',
               '#9333ea'
             ]
           }
@@ -74,7 +74,7 @@ shipmentCards = [
     value: 1250,
     icon: 'fas fa-box',
     bgColor: '#DBEAFE',
-    iconColor: '#2563EB',
+    iconColor: 'rgb(11, 74, 111)',
 
   },
   {

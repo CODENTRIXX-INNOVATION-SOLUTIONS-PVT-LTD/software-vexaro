@@ -21,7 +21,7 @@
 
 .view-btn {
     border: none;
-    background: #2563eb;
+    background: rgb(11, 74, 111);
     color: white;
     padding: 10px 18px;
     border-radius: 8px;
@@ -33,7 +33,7 @@
 }
 
 .view-btn:hover {
-    background: #1d4ed8;
+    background: rgb(11, 74, 111);
 }
 
 .filter-bar {
@@ -159,7 +159,7 @@ td {
 }
 
 .action-btn:hover {
-    color: #2563eb;
+    color: rgb(11, 74, 111);
 }
 
 @media(max-width: 1023px) {

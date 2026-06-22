@@ -388,17 +388,17 @@ label {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 991.98px) {
   .left-panel {
     display: none; // Gracefully handles tablets and smaller portable screens
   }
 
   .brand--mobile {
     display: inline-flex;
-    color: $blue;
     margin-bottom: 2rem;
-    .brand-icon {
-      background: $blue;
+    .brand-logo-img {
+      height: 32px;
+      width: auto;
     }
   }
 

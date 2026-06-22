@@ -51,6 +51,10 @@ export class LoginComponent {
         return;
       }
 
+      // Store mock token and user role for strict route guards
+      localStorage.setItem("token", "mock-vexaro-session-token");
+      localStorage.setItem("userRole", user.role);
+
       switch (user.role) {
         case "SUPER_ADMIN":
           this.router.navigate(["/super-admin"]);

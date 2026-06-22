@@ -19,6 +19,7 @@ import { AdminReports } from "./pages/super-admin/admin-reports/admin-reports";
 import { UserManagement } from "./pages/super-admin/user-management/user-management";
 import { AdminSetting } from "./pages/super-admin/admin-setting/admin-setting";
 import { AdminPayment } from "./pages/super-admin/admin-payment/admin-payment";
+import { AdminDisputeList } from "./pages/super-admin/disputes/dispute-list/dispute-list";
 
 // WAREHOUSE
 import { InboundShipments } from "./pages/warehouse/inbound-shipments/inbound-shipments";
@@ -92,6 +93,10 @@ import { DistributorProfile } from "./pages/super-admin/distributor/distributor-
 
 import { Reports } from "./pages/merchant/reports/reports";
 
+import { superAdminGuard } from "./guards/super-admin.guard";
+import { distributorGuard } from "./guards/distributor.guard";
+import { merchantGuard } from "./guards/merchant.guard";
+
 export const routes: Routes = [
   {
     path: "login",
@@ -102,18 +107,38 @@ export const routes: Routes = [
     component: RegisterComponent,
   },
   {
+    path: "forgot-password",
+    loadComponent: () => import("./forgot-password/forgot-password.component").then((m) => m.ForgotPasswordComponent),
+  },
+  {
+    path: "reset-password",
+    loadComponent: () => import("./reset-password/reset-password.component").then((m) => m.ResetPasswordComponent),
+  },
+  {
+    path: "404",
+    loadComponent: () => import("./error-pages/not-found/not-found.component").then((m) => m.NotFoundComponent),
+  },
+  {
+    path: "403",
+    loadComponent: () => import("./error-pages/forbidden/forbidden.component").then((m) => m.ForbiddenComponent),
+  },
+  {
+    path: "500",
+    loadComponent: () => import("./error-pages/server-error/server-error.component").then((m) => m.ServerErrorComponent),
+  },
+  {
     path: "set-password",
     component: RegisterComponent,
   },
   {
     path: "super-admin",
     component: SuperAdminDashboard,
+    canActivate: [superAdminGuard],
     children: [
       { path: "dashboard", component: SuperAdminDashboardPage },
       { path: "merchants", component: Merchant },
       { path: "distributors", component: DistributorList },
       { path: "distributors/profile/:id", component: DistributorProfile },
-      { path: "warehouses", component: Warehouses },
       { path: "shipments", component: Shipments },
       { path: "tracking", component: Tracking },
       { path: "rate-management", component: RateManagement },
@@ -122,19 +147,22 @@ export const routes: Routes = [
       { path: "reports", component: AdminReports },
       { path: "user-management", component: UserManagement },
       { path: "settings", component: AdminSetting },
+      { path: "disputes", component: AdminDisputeList },
+      { path: "disputes/:id", component: DisputeDetail },
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
     ],
   },
   {
     path: "merchant",
     component: MerchantDashboard,
+    canActivate: [merchantGuard],
     children: [
       { path: "dashboard", component: MarchandeDashboardPage },
       { path: "create-shipment", component: CreateShipment },
       { path: "shipments", component: MerchantShipments },
       { path: "tracking", component: MerchantTracking },
       { path: "bulk-upload", component: BulkUpload },
-      { path: "payments", component: Payments },
+      { path: "wallet", component: Payments },
       { path: "reports", component: Reports },
       { path: "address-book", component: AddressBook },
       { path: "support", component: MerchantSupport },
@@ -147,6 +175,7 @@ export const routes: Routes = [
   {
     path: "distributor",
     component: DistributorDashboard,
+    canActivate: [distributorGuard],
     children: [
       { path: "dashboard", component: DistrubuterDashboardPage },
 
@@ -242,5 +271,9 @@ export const routes: Routes = [
   {
     path: "",
     component: Home,
+  },
+  {
+    path: "**",
+    redirectTo: "404",
   },
 ];

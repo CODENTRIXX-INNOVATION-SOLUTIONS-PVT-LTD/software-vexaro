@@ -106,8 +106,7 @@ export class DistributorDashboard {
         { label: 'Profile', route: '/distributor/settings/profile' },
         { label: 'Company Details', route: '/distributor/settings/company-details' },
         { label: 'Notifications', route: '/distributor/settings/notifications' },
-        { label: 'Security', route: '/distributor/settings/security' },
-        { label: 'API Settings', route: '/distributor/settings/api-settings' }
+        { label: 'Security', route: '/distributor/settings/security' }
       ]
     },
 

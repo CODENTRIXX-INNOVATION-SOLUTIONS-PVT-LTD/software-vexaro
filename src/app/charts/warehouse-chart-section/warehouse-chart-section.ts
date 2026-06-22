@@ -58,8 +58,8 @@ export class WarehouseChartSectionimplements implements AfterViewInit {
       data: [45, 30, 25],
       backgroundColor: [
         '#22c55e', // Green
-        '#f59e0b', // Orange
-        '#ef4444'  // Red
+        'rgb(232, 116, 58)', // Orange
+        'rgb(239, 68, 68)'  // Red
       ],
       borderColor: '#ffffff',
       borderWidth: 3,

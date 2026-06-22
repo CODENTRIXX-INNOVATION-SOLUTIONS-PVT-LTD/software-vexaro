@@ -1,8 +1,8 @@
 <div class="header-section">
     <h2>Franchise Performance Analytics</h2>
     <div class="actions">
-        <button class="view-btn" (click)="exportCSV()"><i class="fas fa-file-csv"></i> Export CSV</button>
-        <button class="view-btn" style="background: #ef4444;" (click)="exportPDF()"><i class="fas fa-file-pdf"></i> Export PDF</button>
+        <button class="view-btn" (click)="exportCSV()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M9 15H8v1h1v1H8"></path></svg> Export CSV</button>
+        <button class="view-btn" style="background: rgb(239, 68, 68);" (click)="exportPDF()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M8 15h2a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2H8v5zM15 15h1M15 11h2"></path></svg> Export PDF</button>
     </div>
 </div>
 
@@ -61,7 +61,7 @@
             <tbody>
                 @if (isLoading) {
                     <tr>
-                        <td colspan="4" class="text-center py-4" style="color: #94a3b8;"><i class="fas fa-spinner fa-spin"></i> Loading analytics data...</td>
+                        <td colspan="4" class="text-center py-4" style="color: #94a3b8;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon animate-spin"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> Loading analytics data...</td>
                     </tr>
                 } @else if (dataList.length === 0) {
                     <tr>

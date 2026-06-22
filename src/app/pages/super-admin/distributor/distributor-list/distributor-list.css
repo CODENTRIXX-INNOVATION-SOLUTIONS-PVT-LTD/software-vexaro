@@ -15,7 +15,7 @@
     margin: 0;
     font-size: 30px;
     font-weight: 700;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
 }
 
 .breadcrumb {
@@ -33,7 +33,7 @@
 }
 
 .breadcrumb a:hover {
-    color: #2563eb;
+    color: rgb(11, 74, 111);
 }
 
 .breadcrumb span {
@@ -42,13 +42,13 @@
 }
 
 .breadcrumb .active {
-    color: #1e293b;
+    color: rgb(10, 10, 10);
     font-weight: 600;
 }
 
 .add-btn {
     border: none;
-    background: #2563eb;
+    background: rgb(11, 74, 111);
     color: white;
     padding: 12px 22px;
     border-radius: 10px;
@@ -64,7 +64,7 @@
 }
 
 .add-btn:hover {
-    background: #1d4ed8;
+    background: rgb(11, 74, 111);
 }
 
 /* Metrics Dashboard Bar */
@@ -113,13 +113,13 @@
     margin: 4px 0 0;
     font-size: 24px;
     font-weight: 700;
-    color: #0f172a;
+    color: rgb(10, 10, 10);
 }
 
 /* Custom Colors for Metrics */
 .metric-card.total .metric-icon {
     background: #eff6ff;
-    color: #2563eb;
+    color: rgb(11, 74, 111);
 }
 
 .metric-card.active .metric-icon {
@@ -129,7 +129,7 @@
 
 .metric-card.inactive .metric-icon {
     background: #fef2f2;
-    color: #ef4444;
+    color: rgb(239, 68, 68);
 }
 
 /* ================= TABLE CARD ================= */
@@ -167,7 +167,7 @@
 }
 
 .search-box input:focus {
-    border-color: #2563eb;
+    border-color: rgb(11, 74, 111);
 }
 
 /* ================= TABLE ================= */
@@ -270,7 +270,7 @@ tbody tr:hover {
 .menu-btn:hover {
     background: #f8fafc;
     border-color: #bfdbfe;
-    color: #2563eb;
+    color: rgb(11, 74, 111);
 }
 
 .dropdown-menu {
@@ -322,7 +322,7 @@ tbody tr:hover {
 }
 
 .dropdown-menu button:hover i {
-    color: #2563eb;
+    color: rgb(11, 74, 111);
 }
 
 .dropdown-menu button:not(:last-child) {
@@ -355,7 +355,7 @@ tbody tr:hover {
 }
 
 .info-box i {
-    color: #f59e0b;
+    color: rgb(232, 116, 58);
     font-size: 18px;
 }
 

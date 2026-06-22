@@ -9,7 +9,7 @@
             </div>
         </div>
         <button class="add-btn" (click)="openCreateModal()">
-            <i class="fa-solid fa-plus"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
             <span>Create Shipment</span>
         </button>
     </div>
@@ -20,7 +20,7 @@
     <!-- Table Section -->
     <div class="table-card">
         <div class="search-box">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
             <input type="text" placeholder="Search shipments by tracking ID or customer...">
         </div>
 
@@ -45,7 +45,7 @@
                     <td>{{ shipment.date }}</td>
                     <td>
                         <span class="courier-badge">
-                            <i class="fa-solid fa-truck-fast"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                             {{ shipment.courier }}
                         </span>
                     </td>
@@ -77,7 +77,7 @@
                         <p>Follow the steps to configure and book a new shipment</p>
                     </div>
                     <button class="close-modal-btn" (click)="closeCreateModal()">
-                        <i class="fa-solid fa-xmark"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                     </button>
                 </div>
 
@@ -88,7 +88,7 @@
                         <div class="step-item" [class.active]="currentStep() === 1" [class.completed]="currentStep() > 1" (click)="selectStep(1)">
                             <div class="step-badge">
                                 @if(currentStep() > 1){
-                                    <i class="fa-solid fa-check"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                 } @else {
                                     <span>1</span>
                                 }
@@ -101,7 +101,7 @@
                         <div class="step-item" [class.active]="currentStep() === 2" [class.completed]="currentStep() > 2" (click)="selectStep(2)">
                             <div class="step-badge">
                                 @if(currentStep() > 2){
-                                    <i class="fa-solid fa-check"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                 } @else {
                                     <span>2</span>
                                 }
@@ -114,7 +114,7 @@
                         <div class="step-item" [class.active]="currentStep() === 3" [class.completed]="currentStep() > 3" (click)="selectStep(3)">
                             <div class="step-badge">
                                 @if(currentStep() > 3){
-                                    <i class="fa-solid fa-check"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                 } @else {
                                     <span>3</span>
                                 }
@@ -140,7 +140,7 @@
                         @if(currentStep() === 1){
                             <div class="form-section animate-fade-in">
                                 <div class="section-header">
-                                    <i class="fa-solid fa-truck-loading header-icon blue-icon"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="header-icon blue-icon svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                     <h4>Pickup Details</h4>
                                 </div>
 
@@ -170,14 +170,14 @@
                                 </div>
 
                                 <button class="dashed-btn" (click)="addNewAddress()">
-                                    <i class="fa-solid fa-plus"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                     <span>Add New Address</span>
                                 </button>
 
                                 <div class="form-actions right-align">
                                     <button class="primary-btn btn-next" (click)="nextStep()">
                                         <span>Next</span>
-                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                     </button>
                                 </div>
                             </div>
@@ -187,7 +187,7 @@
                         @if(currentStep() === 2){
                             <div class="form-section animate-fade-in">
                                 <div class="section-header">
-                                    <i class="fa-solid fa-user-tag header-icon orange-icon"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="header-icon orange-icon svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                     <h4>Receiver Details</h4>
                                 </div>
 
@@ -229,12 +229,12 @@
 
                                 <div class="form-actions justify-between">
                                     <button class="secondary-btn" (click)="prevStep()">
-                                        <i class="fa-solid fa-arrow-left"></i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                         <span>Back</span>
                                     </button>
                                     <button class="primary-btn btn-next" (click)="nextStep()">
                                         <span>Next</span>
-                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                     </button>
                                 </div>
                             </div>
@@ -244,7 +244,7 @@
                         @if(currentStep() === 3){
                             <div class="form-section animate-fade-in">
                                 <div class="section-header">
-                                    <i class="fa-solid fa-box-open header-icon purple-icon"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="header-icon purple-icon svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                     <h4>Package Details</h4>
                                 </div>
 
@@ -298,12 +298,12 @@
 
                                 <div class="form-actions justify-between">
                                     <button class="secondary-btn" (click)="prevStep()">
-                                        <i class="fa-solid fa-arrow-left"></i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                         <span>Back</span>
                                     </button>
                                     <button class="primary-btn btn-next" (click)="nextStep()">
                                         <span>Next</span>
-                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                     </button>
                                 </div>
                             </div>
@@ -313,7 +313,7 @@
                         @if(currentStep() === 4){
                             <div class="form-section animate-fade-in">
                                 <div class="section-header">
-                                    <i class="fa-solid fa-file-invoice header-icon green-icon"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="header-icon green-icon svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                     <h4>Summary & Rate</h4>
                                 </div>
 
@@ -322,14 +322,14 @@
                                     <h5>Shipment Summary</h5>
                                     <div class="summary-grid">
                                         <div class="summary-item full-width">
-                                            <i class="fa-solid fa-location-dot from-icon"></i>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="from-icon svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                             <div>
                                                 <span class="label">From</span>
                                                 <p class="value">{{ pickupAddress }}</p>
                                             </div>
                                         </div>
                                         <div class="summary-item full-width">
-                                            <i class="fa-solid fa-map-pin to-icon"></i>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="to-icon svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                             <div>
                                                 <span class="label">To</span>
                                                 <p class="value">{{ receiverName }}, {{ receiverAddress }}, {{ receiverCity }} - {{ receiverPincode }}</p>
@@ -381,14 +381,14 @@
                                         <h4 class="total-price">₹{{ totalAmount | number:'1.2-2' }}</h4>
                                     </div>
                                     <button class="primary-btn create-shipment-btn" (click)="createShipment()">
-                                        <i class="fa-solid fa-square-check"></i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                         <span>Create Shipment</span>
                                     </button>
                                 </div>
 
                                 <div class="form-actions justify-start">
                                     <button class="secondary-btn" (click)="prevStep()">
-                                        <i class="fa-solid fa-arrow-left"></i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                         <span>Back</span>
                                     </button>
                                 </div>
@@ -400,28 +400,28 @@
                 <!-- Trust Badges Section -->
                 <div class="modal-trust-badges">
                     <div class="badge-item">
-                        <div class="badge-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="badge-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></div>
                         <div class="badge-text">
                             <strong>Secure & Reliable</strong>
                             <span>Your shipments are safe</span>
                         </div>
                     </div>
                     <div class="badge-item">
-                        <div class="badge-icon"><i class="fa-solid fa-clock"></i></div>
+                        <div class="badge-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></div>
                         <div class="badge-text">
                             <strong>Fast Delivery</strong>
                             <span>On-time delivery</span>
                         </div>
                     </div>
                     <div class="badge-item">
-                        <div class="badge-icon"><i class="fa-solid fa-headset"></i></div>
+                        <div class="badge-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></div>
                         <div class="badge-text">
                             <strong>24/7 Support</strong>
                             <span>We're here to help</span>
                         </div>
                     </div>
                     <div class="badge-item">
-                        <div class="badge-icon"><i class="fa-solid fa-percent"></i></div>
+                        <div class="badge-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></div>
                         <div class="badge-text">
                             <strong>Best Rates</strong>
                             <span>Compare & choose</span>
@@ -447,7 +447,7 @@
                         </span>
                     </div>
                     <button class="close-modal-btn" (click)="closeDetailsModal()">
-                        <i class="fa-solid fa-xmark"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                     </button>
                 </div>
 
@@ -456,17 +456,17 @@
                     <!-- Left: Shipment Info -->
                     <div class="details-left">
                         <div class="info-group-card">
-                            <h4><i class="fa-solid fa-circle-info"></i> Basic Information</h4>
+                            <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> Basic Information</h4>
                             <div class="info-grid-2col">
                                 <div><span class="detail-label">Tracking ID</span><p class="detail-value highlight">{{ selectedShipment().id }}</p></div>
                                 <div><span class="detail-label">Date Created</span><p class="detail-value">{{ selectedShipment().date }}</p></div>
-                                <div><span class="detail-label">Courier Partner</span><p class="detail-value"><i class="fa-solid fa-truck-fast"></i> {{ selectedShipment().courier }}</p></div>
+                                <div><span class="detail-label">Courier Partner</span><p class="detail-value"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> {{ selectedShipment().courier }}</p></div>
                                 <div><span class="detail-label">Shipping Cost</span><p class="detail-value amount">{{ selectedShipment().amount }}</p></div>
                             </div>
                         </div>
 
                         <div class="info-group-card">
-                            <h4><i class="fa-solid fa-route"></i> Address Information</h4>
+                            <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> Address Information</h4>
                             <div class="address-split">
                                 <div class="address-block">
                                     <span class="detail-label">Pickup Address (From)</span>
@@ -484,7 +484,7 @@
                         </div>
 
                         <div class="info-group-card">
-                            <h4><i class="fa-solid fa-box"></i> Package Specifications</h4>
+                            <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> Package Specifications</h4>
                             <div class="info-grid-3col">
                                 <div><span class="detail-label">Weight</span><p class="detail-value">{{ selectedShipment().weight }} kg</p></div>
                                 <div><span class="detail-label">Dimensions</span><p class="detail-value">{{ selectedShipment().length }}x{{ selectedShipment().width }}x{{ selectedShipment().height }} cm</p></div>
@@ -492,7 +492,7 @@
                             </div>
                             @if(selectedShipment().isFragile){
                                 <div class="fragile-warning-tag">
-                                    <i class="fa-solid fa-triangle-exclamation"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                     <span>Fragile Cargo - Handle With Care</span>
                                 </div>
                             }
@@ -502,17 +502,17 @@
                     <!-- Right: Live Tracking Timeline -->
                     <div class="details-right">
                         <div class="timeline-card">
-                            <h4><i class="fa-solid fa-timeline"></i> Shipping History & Timeline</h4>
+                            <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> Shipping History & Timeline</h4>
                             <div class="tracking-timeline-vertical">
                                 @for(point of selectedShipment().timeline; track point.title; let isLast = $last){
                                     <div class="timeline-node" [class.completed]="point.status === 'completed'" [class.active]="point.status === 'active'">
                                         <div class="node-indicator">
                                             @if(point.status === 'completed'){
-                                                <i class="fa-solid fa-circle-check"></i>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                             } @else if(point.status === 'active'){
-                                                <i class="fa-solid fa-circle-dot"></i>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                             } @else {
-                                                <i class="fa-solid fa-circle"></i>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                             }
                                             @if(!isLast){
                                                 <span class="node-line"></span>

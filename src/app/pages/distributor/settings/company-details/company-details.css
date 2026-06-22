@@ -7,7 +7,7 @@
 
 .section-title { border-bottom: 1px solid #e5e7eb; padding-bottom: 10px; margin-bottom: 15px; }
 .section-title h4 { margin: 0; font-size: 16px; color: #111827; display: flex; align-items: center; gap: 8px; }
-.section-title i { color: #3b82f6; }
+.section-title i { color: rgb(11, 74, 111); }
 
 .form-container { display: flex; flex-direction: column; gap: 20px; }
 .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
@@ -16,11 +16,11 @@
 .form-group label { font-size: 14px; font-weight: 600; color: #374151; }
 
 .form-control { padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; font-family: inherit; outline: none; transition: border-color 0.2s; background: #fff; }
-.form-control:focus { border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); }
+.form-control:focus { border-color: rgb(11, 74, 111); box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); }
 
 .form-actions { display: flex; justify-content: flex-end; padding-top: 10px; border-top: 1px solid #e5e7eb; }
-.submit-btn { background: #2563eb; color: white; padding: 12px 24px; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.2s; }
-.submit-btn:hover:not(:disabled) { background: #1d4ed8; }
+.submit-btn { background: rgb(11, 74, 111); color: white; padding: 12px 24px; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.2s; }
+.submit-btn:hover:not(:disabled) { background: rgb(11, 74, 111); }
 .submit-btn:disabled { opacity: 0.7; cursor: not-allowed; }
 
 @media(max-width: 1023px) {

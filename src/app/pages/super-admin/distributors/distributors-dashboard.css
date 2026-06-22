@@ -27,7 +27,7 @@
 }
 
 .breadcrumb a {
-    color: #3b82f6;
+    color: rgb(11, 74, 111);
     text-decoration: none;
     cursor: pointer;
 }
@@ -42,7 +42,7 @@
 }
 
 .add-btn {
-    background-color: #3b82f6;
+    background-color: rgb(11, 74, 111);
     color: white;
     border: none;
     padding: 10px 16px;
@@ -57,7 +57,7 @@
 }
 
 .add-btn:hover {
-    background-color: #2563eb;
+    background-color: rgb(11, 74, 111);
 }
 
 .stats-container {
@@ -97,11 +97,11 @@
 }
 
 .stat-icon.inactive {
-    background-color: #ef4444;
+    background-color: rgb(239, 68, 68);
 }
 
 .stat-icon.shipments {
-    background-color: #f59e0b;
+    background-color: rgb(232, 116, 58);
 }
 
 .stat-content {

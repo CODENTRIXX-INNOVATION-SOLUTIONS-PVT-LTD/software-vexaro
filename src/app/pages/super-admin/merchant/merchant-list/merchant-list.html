@@ -14,21 +14,21 @@
     <!-- Metrics Bar -->
     <div class="metrics-grid">
         <div class="metric-card total">
-            <div class="metric-icon"><i class="fa-solid fa-building"></i></div>
+            <div class="metric-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></div>
             <div class="metric-info">
                 <h3>Total Merchants</h3>
                 <p>{{ totalMerchants }}</p>
             </div>
         </div>
         <div class="metric-card active">
-            <div class="metric-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <div class="metric-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></div>
             <div class="metric-info">
                 <h3>Active Merchants</h3>
                 <p>{{ activeMerchants }}</p>
             </div>
         </div>
         <div class="metric-card inactive">
-            <div class="metric-icon"><i class="fa-solid fa-circle-xmark"></i></div>
+            <div class="metric-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></div>
             <div class="metric-info">
                 <h3>Inactive Merchants</h3>
                 <p>{{ inactiveMerchants }}</p>
@@ -42,14 +42,14 @@
         <!-- Controls Row -->
         <div class="controls-row">
             <div class="search-box">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                 <input type="text" [(ngModel)]="searchQuery"
                     placeholder="Search by company, contact, email or distributor...">
             </div>
 
             <div class="filter-box">
                 <div class="select-wrapper">
-                    <i class="fa-solid fa-filter"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                     <select [(ngModel)]="statusFilter">
                         <option value="All">All Statuses</option>
                         <option value="Active">Active Only</option>
@@ -67,7 +67,7 @@
                         <th>ID</th>
                         <th>Merchant / Company</th>
                         <th>Contact Details</th>
-                        <th>Email Address</th>
+                        <th>Total Shipments</th>
                         <th>Assigned Distributor</th>
                         <th>Status</th>
                         <th class="text-right">Actions</th>
@@ -92,18 +92,18 @@
                         <td>
                             <div class="contact-details">
                                 <span class="contact-name">{{ merchant.contactPerson }}</span>
-                                <span class="contact-phone"><i class="fa-solid fa-phone"></i> {{ merchant.mobile
+                                <span class="contact-phone"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> {{ merchant.mobile
                                     }}</span>
                             </div>
                         </td>
                         <td>
-                            <span class="email-cell">{{ merchant.email }}</span>
+                            <span class="shipment-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> {{ merchant.totalShipments }}</span>
                         </td>
                         <td>
                             <a [routerLink]="['/super-admin/distributors/profile', merchant.distributorId]"
                                 class="distributor-link">
                                 <div class="distributor-badge">
-                                    <i class="fa-solid fa-truck-ramp-box"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                     {{ merchant.distributorName }}
                                 </div>
                             </a>
@@ -111,20 +111,20 @@
                         <td>
                             <span class="status" [class.active-status]="merchant.status === 'Active'"
                                 [class.inactive-status]="merchant.status === 'Inactive'">
-                                <i class="fa-solid fa-circle"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                 {{ merchant.status }}
                             </span>
                         </td>
                         <td class="action-cell text-right">
                             <div class="action-menu">
                                 <button class="menu-btn" (click)="toggleMenu(merchant.id); $event.stopPropagation()">
-                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                 </button>
 
                                 @if (activeMenu === merchant.id) {
                                 <div class="dropdown-menu">
                                     <button (click)="viewMerchant(merchant.id)">
-                                        <i class="fa-solid fa-circle-info"></i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                         <span>View Details</span>
                                     </button>
                                 </div>
@@ -135,7 +135,7 @@
                     } @empty {
                     <tr>
                         <td colspan="7" class="empty-state">
-                            <i class="fa-solid fa-folder-open"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                             <p>No merchants found matching your filters.</p>
                         </td>
                     </tr>

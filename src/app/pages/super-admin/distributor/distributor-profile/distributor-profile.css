@@ -19,7 +19,7 @@
 }
 
 .back-link:hover {
-    color: #2563eb;
+    color: rgb(11, 74, 111);
 }
 
 /* Header */
@@ -43,7 +43,7 @@
     margin: 0;
     font-size: 28px;
     font-weight: 700;
-    color: #0f172a;
+    color: rgb(10, 10, 10);
 }
 
 .page-header p {
@@ -66,7 +66,7 @@
 
     background: linear-gradient(
         135deg,
-        #2563eb,
+        rgb(11, 74, 111),
         #4f46e5
     );
 
@@ -83,7 +83,7 @@
 .profile-info h1 {
     margin: 0;
     font-size: 28px;
-    color: #0f172a;
+    color: rgb(10, 10, 10);
 }
 
 .profile-info p {
@@ -197,7 +197,7 @@
 
     font-size: 18px;
     font-weight: 600;
-    color: #0f172a;
+    color: rgb(10, 10, 10);
 }
 
 /* Icons */
@@ -216,7 +216,7 @@
 
 .blue {
     background: #dbeafe;
-    color: #2563eb;
+    color: rgb(11, 74, 111);
 }
 
 .green {
@@ -270,7 +270,7 @@
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-    border-color: #2563eb;
+    border-color: rgb(11, 74, 111);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, .1);
 }
 
@@ -410,9 +410,9 @@ select[readonly] {
 }
 
 .active-tab {
-    background: #2563eb !important;
+    background: rgb(11, 74, 111) !important;
     color: #fff !important;
-    border-color: #2563eb !important;
+    border-color: rgb(11, 74, 111) !important;
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
 }
 
@@ -421,7 +421,7 @@ select[readonly] {
 }
 
 .active-tab {
-    background: linear-gradient(135deg, #2563eb, #3b82f6) !important;
+    background: linear-gradient(135deg, rgb(11, 74, 111), rgb(11, 74, 111)) !important;
     color: white !important;
     border-color: transparent !important;
     transform: translateY(-1px);

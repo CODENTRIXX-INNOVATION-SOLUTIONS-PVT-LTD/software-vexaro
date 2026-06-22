@@ -2,7 +2,7 @@
 
     <div class="page-header">
         <h1>Settings</h1>
-        <p>Manage company, notification and API configurations</p>
+        <p>Manage company, notification, and business rule configurations</p>
     </div>
 
     <!-- Company Settings -->
@@ -71,6 +71,53 @@
                 [(ngModel)]="settings.notificationSettings.whatsappEnabled">
         </div>
 
+    </div>
+
+    <!-- Platform Business Rules Configuration -->
+    <div class="card">
+        <h2>Business Rules Configuration</h2>
+        
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Platform Rate Markup (%)</label>
+                <div class="input-with-symbol">
+                    <input type="number" [(ngModel)]="settings.platformRateConfig.markupPercentage" step="0.1">
+                    <span class="symbol">%</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Base Weight Limit (kg)</label>
+                <div class="input-with-symbol">
+                    <input type="number" [(ngModel)]="settings.weightSlabManagement.baseWeightLimit" step="0.5">
+                    <span class="symbol">kg</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Extra Weight Step (kg)</label>
+                <div class="input-with-symbol">
+                    <input type="number" [(ngModel)]="settings.weightSlabManagement.extraWeightStep" step="0.5">
+                    <span class="symbol">kg</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Max Compensation Ceiling</label>
+                <div class="input-with-symbol">
+                    <span class="symbol prefix">₹</span>
+                    <input type="number" [(ngModel)]="settings.compensationCeiling.defaultCapPerShipment">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Weight Dispute Window</label>
+                <div class="input-with-symbol">
+                    <input type="number" [(ngModel)]="settings.weightDisputeWindow.defaultDaysAllowed">
+                    <span class="symbol">days</span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <button class="save-btn" (click)="saveSettings()">

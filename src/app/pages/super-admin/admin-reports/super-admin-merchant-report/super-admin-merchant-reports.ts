@@ -24,7 +24,7 @@ export class SuperAdminMerchantReports implements AfterViewInit {
       value: 120,
       icon: 'fas fa-store',
       bgColor: '#DBEAFE',
-      iconColor: '#2563EB'
+      iconColor: 'rgb(11, 74, 111)'
     },
     {
       title: 'Active Merchants',
@@ -120,8 +120,8 @@ export class SuperAdminMerchantReports implements AfterViewInit {
         datasets: [{
           label: 'Merchants',
           data: [55, 65, 78, 88, 102, 120],
-          borderColor: '#2563eb',
-          backgroundColor: '#2563eb',
+          borderColor: 'rgb(11, 74, 111)',
+          backgroundColor: 'rgb(11, 74, 111)',
           tension: 0.4
         }]
       },

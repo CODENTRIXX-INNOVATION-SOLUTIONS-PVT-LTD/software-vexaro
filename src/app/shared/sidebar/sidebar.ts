@@ -1,8 +1,9 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive, Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MenuItem } from './sidebar.model';
 import { filter, Subscription } from 'rxjs';
+import { ViewportService } from '../viewport.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -13,6 +14,7 @@ import { filter, Subscription } from 'rxjs';
 })
 export class Sidebar implements OnInit, OnDestroy {
   sidebarClass = '';
+  private viewport = inject(ViewportService);
 
   constructor(private router: Router) {}
 
@@ -48,7 +50,7 @@ export class Sidebar implements OnInit, OnDestroy {
   }
 
   toggleCollapse(): void {
-    if(window.innerWidth < 1024) {
+    if (this.viewport.isTablet()) {
        this.toggleDrawer();
     } else {
        this.collapsed = !this.collapsed;
@@ -64,6 +66,8 @@ export class Sidebar implements OnInit, OnDestroy {
   }
 
   logout(): void {
+    localStorage.removeItem('token');
+    localStorage.removeItem('userRole');
     this.router.navigate(['/login']);
   }
 

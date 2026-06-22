@@ -23,7 +23,7 @@ export class SuperAdminDistributorReports implements AfterViewInit {
       value: 1250,
       icon: 'fas fa-truck',
       bgColor: '#DBEAFE',
-      iconColor: '#2563EB'
+      iconColor: 'rgb(11, 74, 111)'
     },
     {
       title: 'Delivered',

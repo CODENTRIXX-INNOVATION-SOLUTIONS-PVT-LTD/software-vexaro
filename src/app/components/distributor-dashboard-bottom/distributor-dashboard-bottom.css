@@ -3,11 +3,11 @@
     --primary: #4f46e5;
     --success: #10b981;
     --success-bg: #d1fae5;
-    --warning: #f59e0b;
+    --warning: rgb(232, 116, 58);
     --warning-bg: #fef3c7;
-    --danger: #ef4444;
+    --danger: rgb(239, 68, 68);
     --danger-bg: #fee2e2;
-    --text-main: #0f172a;
+    --text-main: rgb(10, 10, 10);
     --text-muted: #64748b;
     --card-bg: rgba(255, 255, 255, 0.7);
     --glass-border: 1px solid rgba(255, 255, 255, 0.5);

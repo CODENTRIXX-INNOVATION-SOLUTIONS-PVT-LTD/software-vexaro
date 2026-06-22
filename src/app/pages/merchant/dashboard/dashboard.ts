@@ -17,7 +17,7 @@ export class MarchandeDashboardPage {
       title: 'Total Shipments',
       value: '12,678',
       icon: 'fas fa-box',
-      iconColor: '#2563eb',
+      iconColor: 'rgb(11, 74, 111)',
       bgColor: '#dbeafe'
     },
     {
@@ -31,7 +31,7 @@ export class MarchandeDashboardPage {
       title: 'In Transit',
       value: '1,890',
       icon: 'fas fa-truck',
-      iconColor: '#f59e0b',
+      iconColor: 'rgb(232, 116, 58)',
       bgColor: '#fef3c7'
     },
     {

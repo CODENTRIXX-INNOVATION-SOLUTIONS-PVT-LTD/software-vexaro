@@ -18,7 +18,7 @@ export class WarehouseDashboardPage {
       title: 'Inbound',
       value: '12,678',
       icon: 'fas fa-arrow-down',
-      iconColor: '#2563eb',
+      iconColor: 'rgb(11, 74, 111)',
       bgColor: '#dbeafe'
     },
     {
@@ -32,7 +32,7 @@ export class WarehouseDashboardPage {
       title: 'In Stock',
       value: '1,890',
       icon: 'fas fa-warehouse',
-      iconColor: '#f59e0b',
+      iconColor: 'rgb(232, 116, 58)',
       bgColor: '#fef3c7'
     },
     {

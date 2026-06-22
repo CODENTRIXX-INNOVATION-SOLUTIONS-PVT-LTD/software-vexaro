@@ -13,7 +13,7 @@ export class AdminSetting {
   settings = {
 
     companySettings: {
-      companyName: 'Vaxaro',
+      companyName: 'Vexaro',
       logo: '',
       gstNumber: '22AAAAA0000A1Z5',
       address: 'Bhopal, Madhya Pradesh',
@@ -26,17 +26,29 @@ export class AdminSetting {
       whatsappEnabled: false
     },
 
-    apiSettings: {
-      apiKey: 'vx_live_123456789',
-      webhookUrl: 'https://api.vaxaro.com/webhook',
-      secretKey: 'vx_secret_123456789'
+    // Business Rules Configuration
+    platformRateConfig: {
+      markupPercentage: 5.0, // Vexaro markup over Velocity base rates
+    },
+    
+    weightSlabManagement: {
+      baseWeightLimit: 0.5, // Base weight in kg
+      extraWeightStep: 0.5, // Step size in kg for additional charges
+    },
+    
+    compensationCeiling: {
+      defaultCapPerShipment: 5000, // INR maximum compensation
+    },
+    
+    weightDisputeWindow: {
+      defaultDaysAllowed: 3, // Days distributor has to raise dispute
     }
 
   };
 
   saveSettings() {
-    console.log(this.settings);
-    alert('Settings saved successfully!');
+    console.log('Saving Business Rules & UI Settings:', this.settings);
+    alert('Platform Configuration Settings saved successfully! \n\nNote: Velocity API credentials are automatically managed securely by the backend via .env');
   }
 
 }

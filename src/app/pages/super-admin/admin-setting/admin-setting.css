@@ -10,7 +10,7 @@
 
 .page-header h1 {
     margin: 0;
-    color: #0f172a;
+    color: rgb(10, 10, 10);
 }
 
 .page-header p {
@@ -29,7 +29,7 @@
 .card h2 {
     margin-top: 0;
     margin-bottom: 20px;
-    color: #0f172a;
+    color: rgb(10, 10, 10);
 }
 
 .form-grid {
@@ -61,7 +61,7 @@
 
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: #2563eb;
+    border-color: rgb(11, 74, 111);
 }
 
 .full-width {
@@ -91,7 +91,7 @@
 }
 
 .save-btn {
-    background: #2563eb;
+    background: rgb(11, 74, 111);
     color: white;
     border: none;
     padding: 12px 28px;
@@ -102,7 +102,7 @@
 }
 
 .save-btn:hover {
-    background: #1d4ed8;
+    background: rgb(11, 74, 111);
 }
 
 @media(max-width:768px) {

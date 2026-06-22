@@ -318,7 +318,7 @@ label {
     background 0.4s;
   &[data-level="weak"] {
     width: 33%;
-    background: #ef4444;
+    background: rgb(239, 68, 68);
   }
   &[data-level="fair"] {
     width: 66%;
@@ -337,7 +337,7 @@ label {
   text-transform: uppercase;
   flex-shrink: 0;
   &[data-level="weak"] {
-    color: #ef4444;
+    color: rgb(239, 68, 68);
   }
   &[data-level="fair"] {
     color: $accent;
@@ -418,16 +418,16 @@ label {
 }
 
 // ─── RESPONSIVE BREAKPOINTS (Synced to 900px) ─────────────────
-@media (max-width: 900px) {
+@media (max-width: 991.98px) {
   .left-panel {
     display: none;
   }
   .brand--mobile {
     display: inline-flex;
-    color: $blue;
     margin-bottom: 2rem;
-    .brand-icon {
-      background: $blue;
+    .brand-logo-img {
+      height: 32px;
+      width: auto;
     }
   }
   .right-panel {

@@ -25,8 +25,8 @@ export class SuperAdminRevenueReports {
           {
             label: 'Revenue',
             data: [120000, 180000, 150000, 220000, 280000, 350000],
-            borderColor: '#2563eb',
-            backgroundColor: '#2563eb',
+            borderColor: 'rgb(11, 74, 111)',
+            backgroundColor: 'rgb(11, 74, 111)',
             tension: 0.4
           }
         ]
@@ -48,7 +48,7 @@ export class SuperAdminRevenueReports {
           {
             data: [55, 15, 20, 10],
             backgroundColor: [
-              '#2563eb',
+              'rgb(11, 74, 111)',
               '#16a34a',
               '#d97706',
               '#9333ea'
@@ -146,7 +146,7 @@ export class SuperAdminRevenueReports {
       value: '₹82,000',
       icon: 'fas fa-chart-line',
       bgColor: '#DBEAFE',
-      iconColor: '#2563EB'
+      iconColor: 'rgb(11, 74, 111)'
     },
     {
       title: 'Monthly Revenue',

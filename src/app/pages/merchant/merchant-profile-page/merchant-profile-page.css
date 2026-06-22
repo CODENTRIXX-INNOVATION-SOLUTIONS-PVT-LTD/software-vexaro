@@ -42,7 +42,7 @@
     right: 0;
     width: 26px;
     height: 26px;
-    background: #2563eb;
+    background: rgb(11, 74, 111);
     border: 2px solid white;
     border-radius: 50%;
     color: white;
@@ -54,13 +54,13 @@
     transition: background 0.2s;
 }
 
-.avatar-edit-btn:hover { background: #1d4ed8; }
+.avatar-edit-btn:hover { background: rgb(11, 74, 111); }
 
 .page-header h2 {
     margin: 0;
     font-size: 24px;
     font-weight: 700;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
 }
 
 .header-sub {
@@ -132,11 +132,11 @@
     white-space: nowrap;
 }
 
-.tab-btn:hover { color: #1e293b; }
+.tab-btn:hover { color: rgb(10, 10, 10); }
 
 .tab-btn.active {
     background: white;
-    color: #2563eb;
+    color: rgb(11, 74, 111);
     font-weight: 600;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
@@ -171,12 +171,12 @@
     flex-shrink: 0;
 }
 
-.section-icon.blue   { background: #dbeafe; color: #2563eb; }
+.section-icon.blue   { background: #dbeafe; color: rgb(11, 74, 111); }
 .section-icon.purple { background: #f3e8ff; color: #7c3aed; }
 .section-icon.green  { background: #dcfce7; color: #16a34a; }
 .section-icon.amber  { background: #fff7ed; color: #c2410c; }
 
-.section-header h3 { margin: 0; font-size: 18px; font-weight: 700; color: #1e293b; }
+.section-header h3 { margin: 0; font-size: 18px; font-weight: 700; color: rgb(10, 10, 10); }
 .section-sub { margin: 4px 0 0; font-size: 13px; color: #94a3b8; }
 
 /* ===== FORM GRID ===== */
@@ -201,7 +201,7 @@
     color: #374151;
 }
 
-.req { color: #ef4444; }
+.req { color: rgb(239, 68, 68); }
 .optional { font-weight: 400; color: #94a3b8; font-size: 12px; margin-left: 2px; }
 
 .form-group input,
@@ -210,7 +210,7 @@
     border-radius: 10px;
     padding: 11px 14px;
     font-size: 14px;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
     background: white;
@@ -219,7 +219,7 @@
 
 .form-group input:focus,
 .form-group select:focus {
-    border-color: #2563eb;
+    border-color: rgb(11, 74, 111);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
 }
 
@@ -234,7 +234,7 @@
 }
 
 .input-with-prefix:focus-within {
-    border-color: #2563eb;
+    border-color: rgb(11, 74, 111);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
 }
 
@@ -264,7 +264,7 @@
 }
 
 .btn-save {
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    background: linear-gradient(135deg, rgb(11, 74, 111), rgb(11, 74, 111));
     color: white;
     border: none;
     padding: 12px 28px;
@@ -331,15 +331,15 @@
     align-items: center;
     justify-content: center;
     font-size: 16px;
-    color: #2563eb;
+    color: rgb(11, 74, 111);
     flex-shrink: 0;
 }
 
 .info-card-body { display: flex; flex-direction: column; gap: 3px; }
 
 .info-label { font-size: 11px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; }
-.info-val   { font-size: 15px; font-weight: 600; color: #1e293b; }
-.warehouse-id { font-family: monospace; color: #2563eb; font-size: 16px; }
+.info-val   { font-size: 15px; font-weight: 600; color: rgb(10, 10, 10); }
+.warehouse-id { font-family: monospace; color: rgb(11, 74, 111); font-size: 16px; }
 
 /* ===== ADDRESS BLOCK ===== */
 .address-block {
@@ -355,7 +355,7 @@
     padding: 12px 18px;
     font-size: 13px;
     font-weight: 600;
-    color: #2563eb;
+    color: rgb(11, 74, 111);
     display: flex;
     align-items: center;
     gap: 8px;
@@ -367,7 +367,7 @@
 .addr-line {
     margin: 0 0 14px;
     font-size: 15px;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
     line-height: 1.6;
 }
 
@@ -401,7 +401,7 @@
 
 .assigned-item { display: flex; flex-direction: column; gap: 5px; }
 .assigned-label { font-size: 11px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; }
-.assigned-val   { font-size: 14px; font-weight: 600; color: #1e293b; display: flex; align-items: center; gap: 6px; }
+.assigned-val   { font-size: 14px; font-weight: 600; color: rgb(10, 10, 10); display: flex; align-items: center; gap: 6px; }
 .assigned-val i { color: #64748b; font-size: 13px; }
 
 .active-tag {

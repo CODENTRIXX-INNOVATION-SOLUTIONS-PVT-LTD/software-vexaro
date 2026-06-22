@@ -24,12 +24,12 @@
 }
 
 .filter-card select:focus {
-    border-color: #2563eb;
+    border-color: rgb(11, 74, 111);
 }
 
 .btn-primary {
     border: none;
-    background: #2563eb;
+    background: rgb(11, 74, 111);
     color: white;
     padding: 12px 22px;
     border-radius: 10px;
@@ -39,7 +39,7 @@
 }
 
 .btn-primary:hover {
-    background: #1d4ed8;
+    background: rgb(11, 74, 111);
 }
 
 /* Analytics */
@@ -66,7 +66,7 @@
     height: 60px;
     border-radius: 14px;
     background: #eff6ff;
-    color: #2563eb;
+    color: rgb(11, 74, 111);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,7 +82,7 @@
 
 .analytics-card h2 {
     margin: 6px 0 0;
-    color: #0f172a;
+    color: rgb(10, 10, 10);
     font-size: 28px;
 }
 
@@ -104,7 +104,7 @@
 
 .chart-card h3 {
     margin: 0;
-    color: #0f172a;
+    color: rgb(10, 10, 10);
 }
 
 .chart-wrapper {
@@ -133,7 +133,7 @@
 
 .card-header h3 {
     margin: 0;
-    color: #0f172a;
+    color: rgb(10, 10, 10);
 }
 
 table {
@@ -217,7 +217,7 @@ table tr:hover {
 
 }.card-header h3 {
     margin: 0;
-    color: #0f172a;
+    color: rgb(10, 10, 10);
 }
 
 .card-header p {
@@ -248,7 +248,7 @@ table tr:hover {
 }
 
 .sales {
-    background: #2563eb;
+    background: rgb(11, 74, 111);
 }
 
 .subscription {

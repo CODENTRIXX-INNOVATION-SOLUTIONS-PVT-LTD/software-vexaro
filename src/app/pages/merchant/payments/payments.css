@@ -13,13 +13,13 @@
     margin: 0;
     font-size: 26px;
     font-weight: 700;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.page-header h2 i { color: #2563eb; }
+.page-header h2 i { color: rgb(11, 74, 111); }
 
 .breadcrumb {
     display: flex;
@@ -29,9 +29,9 @@
 }
 
 .breadcrumb a { text-decoration: none; color: #64748b; font-size: 13px; transition: 0.2s; }
-.breadcrumb a:hover { color: #2563eb; }
+.breadcrumb a:hover { color: rgb(11, 74, 111); }
 .breadcrumb span { color: #94a3b8; font-size: 13px; }
-.breadcrumb .active { color: #1e293b; font-weight: 600; }
+.breadcrumb .active { color: rgb(10, 10, 10); font-weight: 600; }
 
 /* ===== TABS ===== */
 .wallet-tabs {
@@ -62,17 +62,17 @@
     white-space: nowrap;
 }
 
-.tab-btn:hover { color: #1e293b; }
+.tab-btn:hover { color: rgb(10, 10, 10); }
 
 .tab-btn.active {
     background: white;
-    color: #2563eb;
+    color: rgb(11, 74, 111);
     font-weight: 600;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .tab-badge {
-    background: #ef4444;
+    background: rgb(239, 68, 68);
     color: white;
     font-size: 10px;
     font-weight: 700;
@@ -84,7 +84,7 @@
 
 /* ===== BALANCE HERO ===== */
 .balance-hero {
-    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 60%, #60a5fa 100%);
+    background: linear-gradient(135deg, #1e3a8a 0%, rgb(11, 74, 111) 60%, #60a5fa 100%);
     border-radius: 20px;
     padding: 32px 36px;
     display: flex;
@@ -222,7 +222,7 @@
 .s-icon.green  { background: #dcfce7; color: #16a34a; }
 .s-icon.purple { background: #f3e8ff; color: #7c3aed; }
 
-.s-val  { font-size: 20px; font-weight: 700; color: #1e293b; }
+.s-val  { font-size: 20px; font-weight: 700; color: rgb(10, 10, 10); }
 .s-label { font-size: 12px; color: #64748b; margin-top: 3px; font-weight: 500; }
 
 /* ===== FORM CARD ===== */
@@ -235,7 +235,7 @@
 }
 
 .card-header { margin-bottom: 20px; }
-.card-header h3 { margin: 0; font-size: 17px; font-weight: 700; color: #1e293b; }
+.card-header h3 { margin: 0; font-size: 17px; font-weight: 700; color: rgb(10, 10, 10); }
 .card-sub { margin: 4px 0 0; font-size: 13px; color: #94a3b8; }
 
 .form-label {
@@ -265,11 +265,11 @@
     transition: all 0.2s;
 }
 
-.pkg-chip:hover { border-color: #93c5fd; color: #2563eb; background: #eff6ff; }
+.pkg-chip:hover { border-color: #93c5fd; color: rgb(11, 74, 111); background: #eff6ff; }
 
 .pkg-chip.selected {
-    border-color: #2563eb;
-    background: #2563eb;
+    border-color: rgb(11, 74, 111);
+    background: rgb(11, 74, 111);
     color: white;
     box-shadow: 0 4px 14px rgba(37,99,235,0.3);
     transform: translateY(-2px);
@@ -290,13 +290,13 @@
     border-radius: 10px;
     padding: 11px 14px;
     font-size: 14px;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
     outline: none;
     transition: border-color 0.2s;
 }
 
 .form-group select:focus,
-.form-group input:focus { border-color: #2563eb; }
+.form-group input:focus { border-color: rgb(11, 74, 111); }
 
 .selected-preview {
     background: #eff6ff;
@@ -304,19 +304,19 @@
     border-radius: 12px;
     padding: 13px 18px;
     font-size: 14px;
-    color: #1e40af;
+    color: rgb(11, 74, 111);
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 20px;
 }
 
-.selected-preview i { color: #2563eb; font-size: 15px; }
+.selected-preview i { color: rgb(11, 74, 111); font-size: 15px; }
 
 .form-actions { display: flex; justify-content: flex-end; }
 
 .btn-submit {
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    background: linear-gradient(135deg, rgb(11, 74, 111), rgb(11, 74, 111));
     color: white;
     border: none;
     padding: 12px 26px;
@@ -351,7 +351,7 @@
 }
 
 .add-btn {
-    background: #2563eb;
+    background: rgb(11, 74, 111);
     color: white;
     border: none;
     padding: 10px 18px;
@@ -365,7 +365,7 @@
     transition: 0.2s;
 }
 
-.add-btn:hover { background: #1d4ed8; }
+.add-btn:hover { background: rgb(11, 74, 111); }
 
 .dispute-summary {
     display: flex;
@@ -398,7 +398,7 @@ td {
 
 tbody tr:hover { background: #fafbff; }
 
-.id-cell   { color: #2563eb; font-weight: 600; font-size: 13px; }
+.id-cell   { color: rgb(11, 74, 111); font-weight: 600; font-size: 13px; }
 .date-cell { color: #64748b; font-size: 13px; }
 .awb-cell  { color: #374151; font-weight: 600; font-size: 13px; font-family: monospace; }
 .note-cell { color: #94a3b8; font-size: 13px; font-style: italic; }
@@ -436,7 +436,7 @@ tbody tr:hover { background: #fafbff; }
 
 .method-badge {
     background: #eff6ff;
-    color: #2563eb;
+    color: rgb(11, 74, 111);
     padding: 4px 10px;
     border-radius: 20px;
     font-size: 12px;
@@ -453,7 +453,7 @@ tbody tr:hover { background: #fafbff; }
     border-radius: 12px;
     padding: 14px 18px;
     font-size: 13.5px;
-    color: #1e40af;
+    color: rgb(11, 74, 111);
     margin-bottom: 16px;
     line-height: 1.6;
 }
@@ -479,7 +479,7 @@ tbody tr:hover { background: #fafbff; }
 
 .contest-btn:hover {
     background: #fee2e2;
-    border-color: #ef4444;
+    border-color: rgb(239, 68, 68);
     transform: translateY(-1px);
     box-shadow: 0 3px 10px rgba(220, 38, 38, 0.18);
 }
@@ -515,7 +515,7 @@ tbody tr:hover { background: #fafbff; }
     transition: 0.2s;
 }
 
-.btn-cancel:hover { background: #f8fafc; color: #1e293b; }
+.btn-cancel:hover { background: #f8fafc; color: rgb(10, 10, 10); }
 
 /* ===== MODAL OVERLAY ===== */
 .modal-overlay {
@@ -579,7 +579,7 @@ tbody tr:hover { background: #fafbff; }
     flex-shrink: 0;
 }
 
-.modal-header h3 { margin: 0; font-size: 18px; font-weight: 700; color: #1e293b; }
+.modal-header h3 { margin: 0; font-size: 18px; font-weight: 700; color: rgb(10, 10, 10); }
 .modal-sub { margin: 3px 0 0; font-size: 13px; color: #64748b; }
 .red-text { color: #dc2626; font-weight: 700; }
 
@@ -599,7 +599,7 @@ tbody tr:hover { background: #fafbff; }
     flex-shrink: 0;
 }
 
-.modal-close-btn:hover { background: #f8fafc; color: #1e293b; }
+.modal-close-btn:hover { background: #f8fafc; color: rgb(10, 10, 10); }
 
 /* Modal Body */
 .modal-body {
@@ -645,7 +645,7 @@ tbody tr:hover { background: #fafbff; }
     letter-spacing: 0.5px;
 }
 
-.chip-val { font-size: 17px; font-weight: 700; color: #1e293b; }
+.chip-val { font-size: 17px; font-weight: 700; color: rgb(10, 10, 10); }
 .detail-chip.red .chip-val   { color: #dc2626; }
 .detail-chip.amber .chip-val { color: #c2410c; }
 .chip-arrow { color: #94a3b8; font-size: 13px; flex-shrink: 0; }
@@ -653,7 +653,7 @@ tbody tr:hover { background: #fafbff; }
 /* Modal fields */
 .modal-field { display: flex; flex-direction: column; gap: 8px; }
 .modal-field label { font-size: 13px; font-weight: 600; color: #374151; }
-.req { color: #ef4444; }
+.req { color: rgb(239, 68, 68); }
 .label-hint { font-weight: 400; color: #94a3b8; margin-left: 4px; }
 
 .modal-field textarea {
@@ -661,7 +661,7 @@ tbody tr:hover { background: #fafbff; }
     border-radius: 12px;
     padding: 14px;
     font-size: 14px;
-    color: #1e293b;
+    color: rgb(10, 10, 10);
     resize: vertical;
     outline: none;
     transition: border-color 0.2s;
@@ -669,7 +669,7 @@ tbody tr:hover { background: #fafbff; }
     line-height: 1.6;
 }
 
-.modal-field textarea:focus { border-color: #2563eb; }
+.modal-field textarea:focus { border-color: rgb(11, 74, 111); }
 
 /* Upload zone */
 .upload-zone {
@@ -692,7 +692,7 @@ tbody tr:hover { background: #fafbff; }
 .upload-zone i { font-size: 28px; color: #93c5fd; }
 
 .upload-link {
-    color: #2563eb;
+    color: rgb(11, 74, 111);
     font-weight: 600;
     cursor: pointer;
     text-decoration: underline;
@@ -720,11 +720,11 @@ tbody tr:hover { background: #fafbff; }
     border: 1px solid #bfdbfe;
     border-radius: 9px;
     font-size: 13px;
-    color: #1e40af;
+    color: rgb(11, 74, 111);
     font-weight: 500;
 }
 
-.file-list li i { color: #3b82f6; }
+.file-list li i { color: rgb(11, 74, 111); }
 
 /* Modal Footer */
 .modal-footer {
