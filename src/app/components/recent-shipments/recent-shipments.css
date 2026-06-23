@@ -1,9 +1,17 @@
+:host {
+    display: block;
+    min-width: 0;
+    height: 100%;
+}
+
 .shipment-card {
     background: #fff;
     border-radius: 18px;
     padding: 24px;
-    margin-top: 20px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
@@ -30,6 +38,7 @@
 
 .table-wrapper {
     overflow-x: auto;
+    flex: 1;
 }
 
 table {

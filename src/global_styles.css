@@ -205,7 +205,10 @@ html { font-size: 16px; }
 /* Small screens: stack layout and make sidebar flow on top */
 @media (max-width: 900px) {
   .layout { flex-direction: column; }
-  .content { padding: 12px; }
+  .content {
+    padding: 12px;
+    min-height: unset;
+  }
 }
 
 /* Tables: allow horizontal scrolling on screens below desktop */
