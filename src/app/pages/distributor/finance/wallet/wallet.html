@@ -104,53 +104,7 @@
 <div class="modal-overlay">
     <div class="modal-content" style="max-height: 90vh; overflow-y: auto;">
         <div class="modal-header">
-<<<<<<< HEAD
-            <h3>Request Wallet Topup</h3>
-            <button class="close-btn" (click)="closeTopupModal()"><svg xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round"
-                    style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg></button>
-        </div>
-        <div class="modal-body">
-            <div class="info-box mb-3"
-                style="background: #f1f5f9; padding: 12px; border-radius: 8px; font-size: 13px; color: #475569;">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                    style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;"
-                    class="text-primary svg-icon">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="12" y1="16" x2="12" y2="12"></line>
-                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                </svg> <strong>Bank Details for NEFT/IMPS:</strong><br>
-                Vexaro Logistics Pvt Ltd<br>
-                A/C: 1234567890<br>
-                IFSC: HDFC0001234
-            </div>
 
-            <div class="form-group mb-3">
-                <label>Amount (₹)</label>
-                <input type="number" class="form-control" [(ngModel)]="topupAmount"
-                    placeholder="Enter amount transferred" min="1000"
-                    style="width: 100%; padding: 10px; border: 1px solid #e2e8f0; border-radius: 6px;">
-            </div>
-            <div class="form-group mb-3">
-                <label>Transaction Reference No. (UTR)</label>
-                <input type="text" class="form-control" [(ngModel)]="topupReference"
-                    placeholder="Enter 12-digit UTR number"
-                    style="width: 100%; padding: 10px; border: 1px solid #e2e8f0; border-radius: 6px;">
-            </div>
-        </div>
-        <div class="modal-footer" style="margin-top: 20px; text-align: right;">
-            <button class="btn-secondary" (click)="closeTopupModal()"
-                style="padding: 10px 16px; border: 1px solid #e2e8f0; background: #fff; border-radius: 6px; margin-right: 10px;">Cancel</button>
-            <button class="btn-primary" [disabled]="topupAmount <= 0 || !topupReference" (click)="submitTopupRequest()"
-                style="padding: 10px 16px; border: none; background: rgb(11, 74, 111); color: white; border-radius: 6px;">Submit
-                Request</button>
-        </div>
-=======
             <h3>Add Funds to Wallet</h3>
             <button class="close-btn" (click)="closeTopupModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1em; height: 1em; display: inline-block; vertical-align: middle;" class="svg-icon"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
         </div>
@@ -244,7 +198,6 @@
                 <p style="color: #64748b; font-size: 14px; margin: 0;">Do not refresh or close the page.</p>
             </div>
         }
->>>>>>> aashutosh-shrivastava
     </div>
 </div>
 }
