@@ -242,6 +242,23 @@ label {
       box-shadow: 0 0 0 4px rgba(192, 57, 27, 0.08);
     }
   }
+  &.disabled {
+    background: rgba(11, 74, 111, 0.03);
+    border-color: rgba(11, 74, 111, 0.12);
+    cursor: not-allowed;
+    
+    &:focus-within {
+      border-color: rgba(11, 74, 111, 0.12);
+      box-shadow: none;
+    }
+    input {
+      color: rgba(10, 10, 10, 0.45);
+      cursor: not-allowed;
+    }
+    .field-icon {
+      color: rgba(11, 74, 111, 0.4);
+    }
+  }
 
   input {
     flex: 1;
