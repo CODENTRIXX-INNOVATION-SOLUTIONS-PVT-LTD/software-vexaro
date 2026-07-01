@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { DashboardService } from '../../services/dashboard.service';
 
 @Component({
   selector: 'app-recent-payments',
@@ -6,44 +7,25 @@ import { Component } from '@angular/core';
   templateUrl: './recent-payments.html',
   styleUrl: '../../common-css/super-admin-dashboard-page-bottom-table.css'
 })
-export class RecentPayments {
+export class RecentPayments implements OnInit {
+  private dashboardService = inject(DashboardService);
 
-  payments = [
-    {
-      paymentId: 'PAY001',
-      customer: 'Rahul Sharma',
-      amount: '₹12,500',
-      method: 'UPI',
-      date: '10 Jun 2026'
-    },
-    {
-      paymentId: 'PAY002',
-      customer: 'Priya Singh',
-      amount: '₹8,200',
-      method: 'Card',
-      date: '10 Jun 2026'
-    },
-    {
-      paymentId: 'PAY003',
-      customer: 'Amit Verma',
-      amount: '₹15,000',
-      method: 'Net Banking',
-      date: '09 Jun 2026'
-    },
-    {
-      paymentId: 'PAY004',
-      customer: 'Neha Gupta',
-      amount: '₹9,800',
-      method: 'UPI',
-      date: '09 Jun 2026'
-    },
-    {
-      paymentId: 'PAY005',
-      customer: 'Rohan Patel',
-      amount: '₹18,300',
-      method: 'Card',
-      date: '08 Jun 2026'
-    }
-  ];
+  payments: any[] = [];
+  isLoading = true;
+
+  ngOnInit(): void {
+    this.dashboardService.getRecentPayments().subscribe({
+      next: (payments) => {
+        this.payments = payments;
+        this.isLoading = false;
+      },
+      error: (error) => {
+        console.error('Error fetching recent payments:', error);
+        this.isLoading = false;
+        // Fallback to empty array on error
+        this.payments = [];
+      }
+    });
+  }
 
 }
