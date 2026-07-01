@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from '../../../../services/user.service';
 
 export interface DistributorMerchant {
   id: string;
@@ -33,6 +34,8 @@ export class DistributorMerchantList implements OnInit {
   isLoading: boolean = false;
   viewMode: 'table' | 'grid' = 'grid';
 
+  private userService = inject(UserService);
+
   constructor(private router: Router) {}
 
   ngOnInit() {
@@ -41,17 +44,32 @@ export class DistributorMerchantList implements OnInit {
 
   loadMerchants() {
     this.isLoading = true;
-    // Mocking real-world load with dummy data for UI display
-    setTimeout(() => {
-      this.merchants = [
-        { id: '1', merchantCode: 'MRC-1001', businessName: 'Fashion Hub Pvt Ltd', contactPerson: 'Ramesh Sharma', phone: '9876543210', email: 'ramesh@fashionhub.com', city: 'Mumbai', warehouseId: 'WH-001', walletBalance: 45000, totalShipments: 1250, status: 'Active', createdAt: '2026-01-15' },
-        { id: '2', merchantCode: 'MRC-1002', businessName: 'Tech Electro', contactPerson: 'Suresh Patil', phone: '9876543211', email: 'suresh@techelectro.in', city: 'Pune', warehouseId: 'WH-002', walletBalance: 12500, totalShipments: 420, status: 'Active', createdAt: '2026-02-20' },
-        { id: '3', merchantCode: 'MRC-1003', businessName: 'Organic Grocers', contactPerson: 'Anita Desai', phone: '9876543212', email: 'anita@organicgrocers.com', city: 'Delhi', warehouseId: 'WH-003', walletBalance: 0, totalShipments: 50, status: 'Inactive', createdAt: '2026-05-10' },
-        { id: '4', merchantCode: 'MRC-1004', businessName: 'Sneaker World', contactPerson: 'Karan Singh', phone: '9876543213', email: 'karan@sneakerworld.in', city: 'Bangalore', warehouseId: 'WH-004', walletBalance: -500, totalShipments: 320, status: 'Suspended', createdAt: '2026-03-05' }
-      ];
-      this.isLoading = false;
-      this.applyFilters();
-    }, 800);
+    this.userService.listUsers({ role: 'MERCHANT' }).subscribe({
+      next: (res) => {
+        this.isLoading = false;
+        if (res.data && res.data.users) {
+          this.merchants = res.data.users.map((m: any) => ({
+            id: m._id,
+            merchantCode: m.email || '—',
+            businessName: m.companyName || '—',
+            contactPerson: `${m.firstName || ''} ${m.lastName || ''}`.trim(),
+            phone: m.phone || '—',
+            email: m.email || '—',
+            city: m.address || '—',
+            warehouseId: 'WH-' + m._id.substring(m._id.length - 4),
+            walletBalance: 0, // Wallet balance loaded on finance page
+            totalShipments: 0,
+            status: m.isActive ? 'Active' : 'Inactive',
+            createdAt: new Date(m.createdAt).toLocaleDateString('en-IN')
+          }));
+          this.applyFilters();
+        }
+      },
+      error: (err) => {
+        this.isLoading = false;
+        console.error('Failed to load merchants:', err);
+      }
+    });
   }
 
   applyFilters() {

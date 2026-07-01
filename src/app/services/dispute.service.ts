@@ -29,12 +29,12 @@ export class DisputeService {
   }
 
   resolveWeightDispute(id: string, status: 'APPROVED' | 'REJECTED'): Observable<any> {
-    return this.http.patch<any>(`${this.baseUrl}/disputes/${id}`, { status });
+    return this.http.patch<any>(`${this.baseUrl}/disputes/weight-dispute/${id}/resolve`, { status });
   }
 
   submitProof(id: string, proofImages: string[]): Observable<any> {
     // Calls the submit proof endpoint
-    return this.http.patch<any>(`${this.baseUrl}/disputes/${id}/proof`, { proofImages });
+    return this.http.patch<any>(`${this.baseUrl}/disputes/weight-dispute/${id}/proof`, { proofImages });
   }
 
   addComment(id: string, comment: string): Observable<any> {
