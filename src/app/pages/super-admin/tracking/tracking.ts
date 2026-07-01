@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { DashboardService } from '../../../services/dashboard.service';
 
 export interface ShipmentSummary {
   awb: string;
@@ -33,8 +34,12 @@ export interface TrackingEvent {
   styleUrl: './tracking.css'
 })
 export class Tracking {
+  private dashboardService = inject(DashboardService);
+  private router = inject(Router);
+
   searchQuery: string = '';
   hasSearched: boolean = false;
+  isLoading: boolean = false;
   
   // Filters
   distributorFilter: string = 'All Distributors';
@@ -45,38 +50,37 @@ export class Tracking {
   shipment: ShipmentSummary | null = null;
   timeline: TrackingEvent[] = [];
 
-  constructor(private router: Router) {}
-
   search() {
     if (!this.searchQuery.trim()) return;
     this.hasSearched = true;
+    this.isLoading = true;
 
-    if (this.searchQuery.toUpperCase() === 'NOTFOUND') {
-      this.shipment = null;
-      this.timeline = [];
-      return;
-    }
+    this.dashboardService.trackByAWB(this.searchQuery.trim()).subscribe({
+      next: (shipmentData) => {
+        this.shipment = shipmentData;
+        this.isLoading = false;
 
-    this.shipment = {
-      awb: this.searchQuery.toUpperCase(),
-      status: 'Out for Delivery',
-      customerName: 'Rahul Sharma',
-      pincode: '400050',
-      paymentType: 'COD',
-      amount: 1500,
-      merchantName: 'Fashion Hub',
-      distributorName: 'SpeedX Logistics',
-      warehouseName: 'Mumbai Central Hub',
-      carrier: 'Delhivery'
-    };
-
-    this.timeline = [
-      { date: '16 Jun 2026', time: '08:30 AM', status: 'Out for Delivery', location: 'Bandra West Hub', description: 'Shipment dispatched with driver Ramesh Singh.', isCurrent: true },
-      { date: '16 Jun 2026', time: '06:00 AM', status: 'Sorted', location: 'Bandra West Hub', description: 'Shipment sorted and allocated to Route 4.', isCurrent: false },
-      { date: '15 Jun 2026', time: '09:45 PM', status: 'Received at Hub', location: 'Bandra West Hub', description: 'Inbound scan completed.', isCurrent: false },
-      { date: '15 Jun 2026', time: '04:15 PM', status: 'Picked Up', location: 'Andheri East', description: 'Driver Amit picked up the package.', isCurrent: false },
-      { date: '15 Jun 2026', time: '10:00 AM', status: 'Manifested', location: 'Andheri East', description: 'Merchant generated AWB.', isCurrent: false }
-    ];
+        // Build timeline from shipment status history if available
+        if (shipmentData && shipmentData.statusHistory) {
+          this.timeline = shipmentData.statusHistory.map((event: any, index: number) => ({
+            date: event.timestamp ? new Date(event.timestamp).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) : 'N/A',
+            time: event.timestamp ? new Date(event.timestamp).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) : 'N/A',
+            status: event.status || 'Unknown',
+            location: 'N/A',
+            description: event.note || 'Status updated',
+            isCurrent: index === 0
+          })).reverse();
+        } else {
+          this.timeline = [];
+        }
+      },
+      error: (error) => {
+        console.error('Error tracking shipment:', error);
+        this.shipment = null;
+        this.timeline = [];
+        this.isLoading = false;
+      }
+    });
   }
 
   intervene() {

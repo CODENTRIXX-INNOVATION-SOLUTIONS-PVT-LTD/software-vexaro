@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { DashboardService } from '../../../services/dashboard.service';
 
 @Component({
   selector: 'app-shipments',
@@ -9,58 +10,28 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './shipments.html',
   styleUrl: './shipments.css',
 })
-export class Shipments {
+export class Shipments implements OnInit {
+  private dashboardService = inject(DashboardService);
 
-  shipments = [
-    {
-      awb: 'AWB987654321',
-      merchant: 'Electro World',
-      distributor: 'SpeedX Logistics',
-      carrier: 'Delhivery',
-      weight: '1.2 kg',
-      status: 'In Transit',
-      date: '19 Jun 2026'
-    },
-    {
-      awb: 'AWB987654322',
-      merchant: 'Fashion Hub',
-      distributor: 'Rapid Delivery Services',
-      carrier: 'XpressBees',
-      weight: '0.5 kg',
-      status: 'Delivered',
-      date: '18 Jun 2026'
-    },
-    {
-      awb: 'AWB987654323',
-      merchant: 'Book Store',
-      distributor: 'Logistics Pro Solutions',
-      carrier: 'Ecom Express',
-      weight: '2.1 kg',
-      status: 'Pending',
-      date: '19 Jun 2026'
-    },
-    {
-      awb: 'AWB987654324',
-      merchant: 'Tech Gadgets',
-      distributor: 'SpeedX Logistics',
-      carrier: 'Delhivery',
-      weight: '0.8 kg',
-      status: 'Failed',
-      date: '17 Jun 2026'
-    },
-    {
-      awb: 'AWB987654325',
-      merchant: 'Home Essentials',
-      distributor: 'Safe Ship Carriers',
-      carrier: 'Smartr Logistics',
-      weight: '5.0 kg',
-      status: 'In Transit',
-      date: '19 Jun 2026'
-    }
-  ];
-
+  shipments: any[] = [];
+  isLoading = true;
   searchTerm: string = '';
   filterStatus: string = 'All';
+
+  ngOnInit(): void {
+    this.dashboardService.getShipments().subscribe({
+      next: (shipments: any[]) => {
+        this.shipments = shipments;
+        this.isLoading = false;
+      },
+      error: (error: any) => {
+        console.error('Error fetching shipments:', error);
+        this.isLoading = false;
+        // Fallback to empty array on error
+        this.shipments = [];
+      }
+    });
+  }
 
   get filteredShipments() {
     return this.shipments.filter(s => {
@@ -69,13 +40,6 @@ export class Shipments {
       const matchesStatus = this.filterStatus === 'All' || s.status === this.filterStatus;
       return matchesSearch && matchesStatus;
     });
-  }
-
-  cancelShipment(shipment: any) {
-    if (confirm(`Are you sure you want to intervene and cancel shipment ${shipment.awb}? This will trigger automated wholesale margin reversals back to the Distributor.`)) {
-      shipment.status = 'Cancelled';
-      alert(`Shipment ${shipment.awb} cancelled successfully. Reversal initiated.`);
-    }
   }
 
 }
